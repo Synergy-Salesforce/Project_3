@@ -1,3 +1,17 @@
 <template>
-    Main Container
+    <div class="alignment-container slds-grid slds-grid_vertical">
+        <div class="banner slds-grid">
+            <img class="logo" src={logoUrl} alt="logo">
+            <div class="slds-col_bump-left">
+                Locations - Apply - Login or Register/Logout
+            </div>
+        </div>
+
+        <div class="main-content">
+            <template lwc:if={homePage}>
+                <c-home-page></c-home-page>
+            </template>
+            <!-- for other pages in the site we will add template directives to render those components instead -->
+        </div>
+    </div>
 </template>

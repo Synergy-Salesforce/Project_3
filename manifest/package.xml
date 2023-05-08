@@ -3,6 +3,7 @@
     <types>
         <members>Hero</members>
         <members>SharedCss</members>
+        <members>HomePage</members>
         <name>LightningComponentBundle</name>
     </types>
     <version>56.0</version>
