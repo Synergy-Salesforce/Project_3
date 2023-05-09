@@ -8,6 +8,8 @@ export default class MainContainer extends LightningElement {
     homePage = true;
     locationPage;
 
+    recordId;
+
     subscription = null;
     logoUrl = LOGO_URL;
 
