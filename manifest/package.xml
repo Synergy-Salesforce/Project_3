@@ -25,12 +25,13 @@
         <name>AuraDefinitionBundle</name>
     </types>
     <types>
-        <members>*</members>
+        <members>mainContainer</members>
+        <members>singleLocationPage</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
         <members>*</members>
         <name>StaticResource</name>
     </types>
-    <version>56.0</version>
+    <version>57.0</version>
 </Package>
