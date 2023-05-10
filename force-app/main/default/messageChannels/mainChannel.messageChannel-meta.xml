@@ -5,7 +5,7 @@
     <lightningMessageFields>
         <fieldName>updatePage</fieldName>
     </lightningMessageFields>
-        <lightningMessageFields>
+    <lightningMessageFields>
         <fieldName>recordId</fieldName>
     </lightningMessageFields>
 </LightningMessageChannel>

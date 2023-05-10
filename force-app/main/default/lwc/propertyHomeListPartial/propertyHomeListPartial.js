@@ -19,14 +19,12 @@ propList;
 
 @wire(MessageContext)
 mContext;
-pageTarget;
 
 
 handlePropertyClick(e)
 {
-
-    this.pageTarget = e.target.querySelector('input').value;
-    const payload = {updatePage : 'locationPage'};
+    let publishRecordId = e.target.querySelector('input').value;
+    const payload = {updatePage : 'locationPage', recordId : publishRecordId};
     publish(this.mContext, mainChannel, payload);
 
     // console.log(e.target.querySelector('input').value);
