@@ -1,0 +1,18 @@
+<template>
+    <h1>Location Page</h1>
+    <!--TODO: Add Record View Form for property -->
+    <lightning-record-view-form
+    object-api-name={objectApiName}
+    record-id={recordId}
+    >
+    <lightning-output-field field-name={fields.nameField}></lightning-output-field>
+    <lightning-output-field field-name={fields.streetAddressField}></lightning-output-field>
+    <lightning-output-field field-name={fields.stateField}></lightning-output-field>
+    <lightning-output-field field-name={fields.zipCodeField}></lightning-output-field>
+    <lightning-output-field field-name={fields.hasAvailableUnitsField}></lightning-output-field>
+    <lightning-output-field field-name={fields.maintenanceFeesField}></lightning-output-field>
+    <lightning-output-field field-name={fields.petsAllowedField}></lightning-output-field>
+    <lightning-output-field field-name={fields.totalUnitsField}></lightning-output-field>
+    </lightning-record-view-form>
+<!--TODO: Add child component for available units (user story # 15)-->
+</template>
