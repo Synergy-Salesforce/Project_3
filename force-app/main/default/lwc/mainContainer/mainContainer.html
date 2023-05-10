@@ -11,6 +11,10 @@
             <template lwc:if={homePage}>
                 <c-home-page></c-home-page>
             </template>
+            <template lwc:elseif={locationPage}>
+                <!-- Be sure to add the recordId property to the location custom component-->
+                Location Page Goes Here
+            </template>
             <!-- for other pages in the site we will add template directives to render those components instead -->
         </div>
     </div>

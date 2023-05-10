@@ -5,8 +5,10 @@ import LOGO_URL from '@salesforce/resourceUrl/Logo';
 
 
 export default class MainContainer extends LightningElement {
-    updatePageVar;
-    homePage;
+    homePage = true;
+    locationPage;
+
+    recordId;
 
     subscription = null;
     logoUrl = LOGO_URL;
@@ -17,9 +19,13 @@ export default class MainContainer extends LightningElement {
     updatePageMethod(updater){
         // reset all page booleans to false
         this.homePage = false;
+        this.locationPage = false;
 
         //set new page boolean to true
         switch (updater){
+            case 'locationPage':
+                this.locationPage = true;
+                break;
             default:
                 this.homePage = true;
         }
@@ -30,7 +36,7 @@ export default class MainContainer extends LightningElement {
             this.subscription = subscribe(
                 this.mContext,
                 MainChannel,
-                (payload) => {this.updatePageVar = payload.updatePage},
+                (payload) => {this.updatePageMethod(payload.updatePage)},
                 { scope : APPLICATION_SCOPE}
             );    
         }
@@ -38,6 +44,5 @@ export default class MainContainer extends LightningElement {
 
     connectedCallback(){
         this.subscribeToMessageChannel();
-        this.updatePageMethod();
     }
 }
