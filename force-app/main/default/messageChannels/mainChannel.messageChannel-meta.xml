@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
-    <masterLabel>testMessageChannel</masterLabel>
+    <masterLabel>mainChannel</masterLabel>
     <isExposed>true</isExposed>
     <lightningMessageFields>
         <fieldName>updatePage</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <fieldName>recordId</fieldName>
     </lightningMessageFields>
 </LightningMessageChannel>

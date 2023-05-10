@@ -1,0 +1,39 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    
+    
+        
+
+           <div style='font-size:20px; background-color:#EAAA00; color:#002855; width:90vw '>
+            Properties With Availability
+           
+                 <template lwc:if={propList.data}>
+                    <template for:each={propList.data} for:item="prop">
+
+
+                        <lightning-card style='width:90vw; height:150px; margin:50px 0px 0px 0px; font-weight:bold; '
+                         key={prop.Id} onclick={handlePropertyClick}>
+
+
+                        <input type="hidden" name="PropertyId" value={prop.Id}>
+                        <!--<button value={prop.Id} onclick={handlePropertyClick}>Click me</button>-->
+
+                        <span style='font-size:40px'>{prop.Name}</span><br>
+                        <span style='font-size:20px'>{prop.City__c}, </span>
+                        <span style='font-size:20px'>{prop.State__c}</span><br>
+                        {prop.Id}
+                        <!--link to relevant property page-->
+                    </lightning-card>
+
+
+                    </template>
+                </template>
+          
+
+        </div> 
+            
+        
+    
+
+
+</template>

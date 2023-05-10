@@ -36,7 +36,11 @@ export default class MainContainer extends LightningElement {
             this.subscription = subscribe(
                 this.mContext,
                 MainChannel,
-                (payload) => {this.updatePageMethod(payload.updatePage)},
+                (payload) => {
+                    console.log(payload.recordId);
+                    this.recordId = payload.recordId;
+                    this.updatePageMethod(payload.updatePage);
+                    },
                 { scope : APPLICATION_SCOPE}
             );    
         }
