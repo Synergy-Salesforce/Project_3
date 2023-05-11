@@ -6,6 +6,7 @@
         <members>HomePage</members>
         <members>locationsMain</members>
         <members>locationsSub</members>-->
+        <members>applicationForm</members>
         <name>LightningComponentBundle</name>
     </types>
     <version>56.0</version>
