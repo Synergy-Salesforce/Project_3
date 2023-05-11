@@ -17,10 +17,14 @@ export default class MainContainer extends LightningElement {
     @wire(MessageContext)
     mContext;
 
-    updatePageMethod(updater){
-        // reset all page booleans to false
+    resetPageBools(){
         this.homePage = false;
         this.locationPage = false;
+    }
+
+    updatePageMethod(updater){
+        // reset all page booleans to false
+        this.resetPageBools();
 
         //set new page boolean to true
         switch (updater){
@@ -51,7 +55,8 @@ export default class MainContainer extends LightningElement {
         this.subscribeToMessageChannel();
     }
 
-    handleClickLocations(e){
+    handleLocationsClick(e){
         this.showAllLocations = true;
+        this.updatePageMethod('homePage');
     }
 }
