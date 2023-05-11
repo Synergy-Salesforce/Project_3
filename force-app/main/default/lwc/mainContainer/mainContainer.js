@@ -7,6 +7,7 @@ import LOGO_URL from '@salesforce/resourceUrl/Logo';
 export default class MainContainer extends LightningElement {
     homePage = true;
     locationPage;
+    applicationPage;
     showAllLocations = false;
 
     recordId;
@@ -20,6 +21,7 @@ export default class MainContainer extends LightningElement {
     resetPageBools(){
         this.homePage = false;
         this.locationPage = false;
+        this.applicationPage = false;
     }
 
     updatePageMethod(updater){
@@ -29,6 +31,9 @@ export default class MainContainer extends LightningElement {
         switch (updater){
             case 'locationPage':
                 this.locationPage = true;
+                break;
+            case 'applicationPage':
+                this.applicationPage = true;
                 break;
             default:
                 this.homePage = true;
@@ -57,5 +62,9 @@ export default class MainContainer extends LightningElement {
     handleLocationsClick(e){
         this.showAllLocations = true;
         this.updatePageMethod('homePage');
+    }
+
+    handleApplicationClick(e){
+        this.updatePageMethod('applicationPage');
     }
 }

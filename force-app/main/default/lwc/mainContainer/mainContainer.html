@@ -3,7 +3,9 @@
         <div class="banner slds-grid">
             <img class="logo" src={logoUrl} alt="logo">
             <div class="slds-col_bump-left">
-                <a onclick={handleLocationsClick}>Locations</a> - Apply - Login or Register/Logout
+                <a onclick={handleLocationsClick}>Locations</a> - 
+                <a onclick={handleApplicationClick}>Apply</a> -
+                Login or Register/Logout
             </div>
         </div>
 
@@ -12,10 +14,12 @@
                 <c-home-page show-all-locations={showAllLocations}></c-home-page>
             </template>
             <template lwc:elseif={locationPage}>
-                <!-- Be sure to add the recordId property to the location custom component-->
                 <c-single-location-page record-id={recordId}></c-single-location-page>
             </template>
-            <!-- for other pages in the site we will add template directives to render those components instead -->
+            <template lwc:elseif={applicationPage}>
+                <h1>Application Form</h1>
+                <c-application-form></c-application-form>
+            </template>
         </div>
     </div>
 </template>
