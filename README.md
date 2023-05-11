@@ -1,5 +1,6 @@
 # Project_3
-Revature Project 3: Develop an experience site for tenants and prospective tenants of an apartment complex. 
+
+Revature Project 3: Develop an experience site for tenants and prospective tenants of an apartment complex.
 
 
 Team Lead - Sam Kuhn

@@ -1,0 +1,12 @@
+.unitText{
+    color:#002855;
+}
+.backgroundColor{
+    background-color: #002855;
+    border: 3px #EAAA00 solid;
+    align-items: center;
+}
+.h1Title{
+    color: #EAAA00;
+    text-align: center;
+}
