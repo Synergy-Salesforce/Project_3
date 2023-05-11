@@ -11,8 +11,8 @@
                             <lightning-layout-item class="slds-border_bottom ">
                                 <div class="slds-m-top_small slds-grid slds-wrap">
                                     <div class="slds-col slds-size_6-of-12">
-                                        <template for:each={unit.PropertyImages__r} for:item="img">
-                                            <c-child-unit key={img.Id} imgurl={img.URL__c}></c-child-unit>
+                                        <template for:each={unit.Images__R} for:item="img">
+                                            <c-child-unit key={img.Id} imgurl={img.Url}></c-child-unit>
                                         </template>
                                     </div>
                                     <div class="slds-col slds-size_4-of-12">
