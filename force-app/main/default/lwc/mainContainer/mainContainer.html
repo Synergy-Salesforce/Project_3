@@ -13,10 +13,7 @@
             </template>
             <template lwc:elseif={locationPage}>
                 <!-- Be sure to add the recordId property to the location custom component-->
-                Location Page Goes Here
-                <div>
-                    {recordId}
-                </div>
+                <c-single-location-page record-id={recordId}></c-single-location-page>
             </template>
             <!-- for other pages in the site we will add template directives to render those components instead -->
         </div>
