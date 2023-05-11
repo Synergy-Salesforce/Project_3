@@ -23,7 +23,6 @@ export default class MainContainer extends LightningElement {
     }
 
     updatePageMethod(updater){
-        // reset all page booleans to false
         this.resetPageBools();
 
         //set new page boolean to true
