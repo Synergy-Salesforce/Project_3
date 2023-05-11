@@ -3,13 +3,20 @@
         <div class="banner slds-grid">
             <img class="logo" src={logoUrl} alt="logo">
             <div class="slds-col_bump-left">
-                Locations - Apply - Login or Register/Logout
+                <a onclick={handleClickLocations}>Locations</a> - Apply - Login or Register/Logout
             </div>
         </div>
 
         <div class="main-content">
             <template lwc:if={homePage}>
                 <c-home-page></c-home-page>
+            </template>
+            <template lwc:elseif={locationPage}>
+                <!-- Be sure to add the recordId property to the location custom component-->
+                Location Page Goes Here
+                <div>
+                    {recordId}
+                </div>
             </template>
             <!-- for other pages in the site we will add template directives to render those components instead -->
         </div>

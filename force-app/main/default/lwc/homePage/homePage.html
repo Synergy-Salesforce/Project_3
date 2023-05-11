@@ -1,3 +1,9 @@
 <template>
     <c-hero></c-hero>
+    <template lwc:if={showAllLocations}>
+        <c-locations-main></c-locations-main>
+    </template>
+    <template lwc:else>
+        <c-property-home-list-partial></c-property-home-list-partial>
+    </template>
 </template>

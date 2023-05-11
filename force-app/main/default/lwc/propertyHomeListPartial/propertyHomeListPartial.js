@@ -5,6 +5,8 @@ import UNITS_FIELD from '@salesforce/schema/Property__c.Has_Available_Units__c';
 import CITY_FIELD from '@salesforce/schema/Property__c.City__c';
 import STATE_FIELD from '@salesforce/schema/Property__c.State__c';*/
 import getPropList from '@salesforce/apex/ProperHelper.getPropsAvailable';
+import { MessageContext, publish } from 'lightning/messageService';
+import mainChannel from '@salesforce/messageChannel/mainChannel__c';
 
 
 export default class PropertyHomeListPartial extends LightningElement {
@@ -13,11 +15,27 @@ export default class PropertyHomeListPartial extends LightningElement {
 
 @wire(getPropList)
 propList;
+propImgUrl;
+prop;
+
+@wire(MessageContext)
+mContext;
+
+getDaImg()
+{
+this.propImgUrl= this.prop.Images__r[0].Url;
+console.log(this.propImgUrl);
+}
+
+
 
 handlePropertyClick(e)
 {
+    let publishRecordId = e.target.querySelector('input').value;
+    const payload = {updatePage : 'locationPage', recordId : publishRecordId};
+    publish(this.mContext, mainChannel, payload);
 
-    console.log(e.target.querySelector('input').value);
+    // console.log(e.target.querySelector('input').value);
 }
 
 
