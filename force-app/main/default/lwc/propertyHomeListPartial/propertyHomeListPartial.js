@@ -26,8 +26,6 @@ handlePropertyClick(e)
     let publishRecordId = e.target.querySelector('input').value;
     const payload = {updatePage : 'locationPage', recordId : publishRecordId};
     publish(this.mContext, mainChannel, payload);
-
-    // console.log(e.target.querySelector('input').value);
 }
 
 
