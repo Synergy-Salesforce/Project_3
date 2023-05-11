@@ -1,0 +1,102 @@
+# List files or directories below to ignore them when running force:source:push, force:source:pull, and force:source:status
+# More information: https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_exclude_source.htm
+#
+
+package.xml
+
+# LWC configuration files
+**/jsconfig.json
+**/.eslintrc.json
+
+# LWC Jest
+**/__tests__/**
+
+**/profiles/**
+
+# #project2 items classes
+# LeadExtensionTest.cls
+# LeadExtension.cls
+# LeadCustomControllerTest.cls
+# LeadCustomController.cls
+# AccountExtensionTest.cls
+# AccountExtension.cls
+# AccountCustomControllerTest.cls
+# AccountCustomController.cls    
+# TestOrderVFPMain.cls
+# TestOrderVFPDetailExtender.cls
+# TestOrderItemFVPMainExtender.cls
+# OrderVFPmainExtend.cls
+# OrderVFPDetailExtender.cls
+# OrderItemFVPMainExtender.cls    
+# ContactControllerExtTest.cls
+# ContactDataFactory.cls
+# ContactTriggerHelper.cls
+# ContactTriggerTest.cls
+# ContactControllerExt.cls
+# WorkOrderPageExtensions.cls
+# WorkOrderPageExtensionsTest.cls
+# #xml
+# LeadExtensionTest.cls-meta.xml
+# LeadExtension.cls-meta.xml
+# LeadCustomControllerTest.cls-meta.xml
+# LeadCustomController.cls-meta.xml
+# AccountExtensionTest.cls-meta.xml
+# AccountExtension.cls-meta.xml
+# AccountCustomControllerTest.cls-meta.xml
+# AccountCustomController.cls-meta.xml    
+# TestOrderVFPMain.cls-meta.xml
+# TestOrderVFPDetailExtender.cls-meta.xml
+# TestOrderItemFVPMainExtender.cls-meta.xml
+# OrderVFPmainExtend.cls-meta.xml
+# OrderVFPDetailExtender.cls-meta.xml
+# OrderItemFVPMainExtender.cls-meta.xml    
+# ContactControllerExtTest.cls-meta.xml
+# ContactDataFactory.cls-meta.xml
+# ContactTriggerHelper.cls-meta.xml
+# ContactTriggerTest.cls-meta.xml
+# ContactControllerExt.cls-meta.xml
+# WorkOrderPageExtensions.cls-meta.xml
+# WorkOrderPageExtensionsTest.cls-meta.xml
+
+# #project 2 visualforce pages 
+# LeadViewPage.page
+# LeadCreateEditPage.page    
+# AccountViewPage.page    
+# AccountCreateEditPage.page    
+# OrderVFPmain.page
+# OrderItemVFPMain.page    
+# OrderVFPDetail.page    
+# ContactListPage.page
+# ContactPage.page    
+# CreateWorkOrder.page
+# WorkOrder.page
+# #xml
+# LeadViewPage.page-meta.xml
+# LeadCreateEditPage.page-meta.xml    
+# AccountViewPage.page-meta.xml    
+# AccountCreateEditPage.page-meta.xml    
+# OrderVFPmain.page-meta.xml
+# OrderItemVFPMain.page-meta.xml    
+# OrderVFPDetail.page-meta.xml    
+# ContactListPage.page-meta.xml
+# ContactPage.page-meta.xml    
+# CreateWorkOrder.page-meta.xml
+# WorkOrder.page-meta.xml
+
+# #project 2 trigger -meta.xml
+# ContactTrigger.trigger
+# #xml
+# ContactTrigger.trigger-meta.xml
+**/lwc/lDStest
+LDStest.js
+LDStest.html
+LDStest.js-meta.xml
+force-app/main/default/lwc/alwc-trailhead-module
+force-app/main/default/messageChannels
+force-app/main/default/lwc/tile
+force-app/main/default/selector
+force-app/main/default/remoteControl
+force-app/main/default/recordFormContact
+force-app/main/default/bikeCard
+#force-app/main/default/aura
+#force-app/main/default/classes/createAndRenderAccountsController
