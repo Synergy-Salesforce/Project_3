@@ -33,5 +33,9 @@
         <members>*</members>
         <name>StaticResource</name>
     </types>
+    <types>
+        <members>anchorage</members>
+        <name>ContentAsset</name>
+    </types>
     <version>57.0</version>
 </Package>
