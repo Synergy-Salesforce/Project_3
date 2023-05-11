@@ -7,6 +7,7 @@ import LOGO_URL from '@salesforce/resourceUrl/Logo';
 export default class MainContainer extends LightningElement {
     homePage = true;
     locationPage;
+    showAllLocations = false;
 
     recordId;
 
@@ -48,5 +49,9 @@ export default class MainContainer extends LightningElement {
 
     connectedCallback(){
         this.subscribeToMessageChannel();
+    }
+
+    handleClickLocations(e){
+        this.showAllLocations = true;
     }
 }
