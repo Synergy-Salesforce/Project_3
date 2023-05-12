@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>ProperHelper</members>
-        <members>unitController</members>
-        <members>ImageController</members>
-        <name>ApexClass</name>
-    </types>
-    <types>
-        <members>childUnit</members>
-        <members>availableUnitsOnDetail</members>
-        <members>singleLocationPage</members>
+        <members>mainContainer</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
