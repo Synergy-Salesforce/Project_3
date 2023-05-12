@@ -2,6 +2,8 @@ import { LightningElement, wire } from 'lwc';
 import { subscribe, MessageContext, APPLICATION_SCOPE } from 'lightning/messageService';
 import MainChannel from '@salesforce/messageChannel/mainChannel__c';
 import LOGO_URL from '@salesforce/resourceUrl/Logo';
+import IS_GUEST from '@salesforce/user/isGuest';
+import { NavigationMixin } from 'lightning/navigation';
 
 
 export default class MainContainer extends LightningElement {
@@ -9,6 +11,10 @@ export default class MainContainer extends LightningElement {
     locationPage;
     applicationPage;
     showAllLocations = false;
+
+    isLoggedIn = !IS_GUEST;
+
+    logoutUrl = window.location.origin + '/secur/logout.jsp';
 
     recordId;
 
