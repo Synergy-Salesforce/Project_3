@@ -1,18 +1,37 @@
 <template>
-    <h1>Location Page</h1>
-    <!--TODO: Add Record View Form for property -->
+    <h2>Property Listing</h2>
     <lightning-record-view-form
     object-api-name={objectApiName}
     record-id={recordId}
     >
-    <lightning-output-field field-name={fields.nameField}></lightning-output-field>
-    <lightning-output-field field-name={fields.streetAddressField}></lightning-output-field>
-    <lightning-output-field field-name={fields.stateField}></lightning-output-field>
-    <lightning-output-field field-name={fields.zipCodeField}></lightning-output-field>
-    <lightning-output-field field-name={fields.hasAvailableUnitsField}></lightning-output-field>
-    <lightning-output-field field-name={fields.maintenanceFeesField}></lightning-output-field>
-    <lightning-output-field field-name={fields.petsAllowedField}></lightning-output-field>
-    <lightning-output-field field-name={fields.totalUnitsField}></lightning-output-field>
+        <lightning-output-field field-name={fields.nameField}></lightning-output-field>
+        <lightning-output-field field-name={fields.streetAddressField}></lightning-output-field>
+        <lightning-output-field field-name={fields.stateField}></lightning-output-field>
+        <lightning-output-field field-name={fields.zipCodeField}></lightning-output-field>
+        <lightning-output-field field-name={fields.hasAvailableUnitsField}></lightning-output-field>
+        <lightning-output-field field-name={fields.maintenanceFeesField}></lightning-output-field>
+        <lightning-output-field field-name={fields.petsAllowedField}></lightning-output-field>
+        <lightning-output-field field-name={fields.totalUnitsField}></lightning-output-field>
     </lightning-record-view-form>
-<!--TODO: Add child component for available units (user story # 15)-->
+    <div class="slds-carousel">
+        <div class="slds-carousel__stage">
+            <div class="slds-carousel__panels">
+                <template for:each={images.data} for:item="image">
+                    <div id={image.Id} key={image.Id} class="slds-carousel__panel" role="tabpanel" aria-hidden="true">
+                        <div class="slds-carousel__image">
+                            <img src={image.Url} alt="Image of the property."/>
+                        </div>
+                    </div>
+                </template>
+                <ul class="slds-carousel__indicators" role="tablist">
+                    <template for:each={images.data} for:item="image">
+                       <li key={image.Id} class="slds-carousel__indicator" role="presentation">
+                           <a class="slds-carousel__indicator-action" href="#" role="tab" aria-selected="false" tabindex="-1" aria-control={image.Id}></a>
+                       </li>
+                    </template>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <c-available-units-on-detail record-id={recordId}></c-available-units-on-detail>
 </template>
