@@ -1,0 +1,18 @@
+<template>
+    <lightning-card>
+    <div class="title" >Request a Tour!</div>
+    <lightning-record-edit-form 
+    object-api-name="Tour_Request__c"
+    lightning-record-edit-form
+    onsuccess={handleSuccess}
+    onsubmit={onSubmitHandler}  
+    class ="lightform">
+
+    <lightning-input-field field-name="Name__c"> </lightning-input-field>
+   <lightning-button variant="brand" type="submit" label="Save">
+    </lightning-button>
+
+    </lightning-record-edit-form>
+    </lightning-card>
+<!-- this should be a comment --> 
+</template>

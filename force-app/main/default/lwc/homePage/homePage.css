@@ -1,0 +1,28 @@
+.sidebar-second{ 
+  
+    width: 30%;
+    order: 3;
+    color: #EAAA00; 
+    background: #ebecee;
+    flex-wrap: wrap;
+    
+    background: #002855;
+  }
+
+  .main{
+    flex: 1;
+    order: 1;
+    background: #002855;
+    flex-wrap: wrap;
+    
+    
+  }
+  .content {
+    display: flex;
+    flex: 1;
+    background: #002855;
+    color: #EAAA00; 
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    
+  }

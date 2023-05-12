@@ -1,0 +1,31 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <div class="backgroundColor">
+        <div class="h1Title">Available Units</div>
+        <div class="slds-grid slds-gutters slds-wrap">
+            <template lwc:if={unitList}>
+                <template for:each={unitList} for:item="unit">
+                    <lightning-card key={unit.Id}
+                        class=" slds-col slds-small-size_4-of-12 slds-grow-none slds-m-around_xx-small">
+                        <lightning-layout>
+                            <lightning-layout-item class="slds-border_bottom ">
+                                <div class="slds-m-top_small slds-grid slds-wrap">
+                                    <div class="slds-col slds-size_6-of-12">
+                                        <template for:each={unit.Images__r} for:item="img">
+                                            <c-child-unit key={img.Id} imgurl={img.Url}></c-child-unit>
+                                        </template>
+                                    </div>
+                                    <div class="slds-col slds-size_4-of-12">
+                                        <div class="unitText">Unit Name: {unit.Name}</div>
+                                        <div class="unitText">Bedrooms: {unit.Bedrooms__c} Baths: {unit.Baths__c}</div>
+                                        <div class="unitText">Rent: ${unit.Rent__c} Unit-Size: {unit.Size_Sq_Ft__c}</div>
+                                    </div>
+                                </div>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </lightning-card>
+                </template>
+            </template>
+        </div>
+    </div>
+</template>

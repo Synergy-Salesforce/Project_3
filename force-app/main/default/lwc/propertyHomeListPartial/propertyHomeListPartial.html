@@ -1,0 +1,16 @@
+<!-- sldsValidatorIgnore -->
+<template>
+           <div class="container">
+            <div class="title">Properties With Availability</div>
+                
+                    <template for:each={propList.data} for:item="prop">
+                            <c-property-child-partial 
+                            key={prop.Id}
+                            prop ={prop}>
+                            </c-property-child-partial>
+                        <!--<span class="item" style='font-size:20px'>{prop.Name}</span>
+                        <span class="item" style='font-size:14px'>{prop.City__c}, {prop.State__c} </span>-->
+                        <!--link to relevant property page-->
+                    </template>
+        </div> 
+</template>

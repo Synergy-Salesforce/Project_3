@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    border-radius: 5px;
+    color: #002855;
+    margin:5px;
+    padding: 3px;
+    background-color: #002855;
+}

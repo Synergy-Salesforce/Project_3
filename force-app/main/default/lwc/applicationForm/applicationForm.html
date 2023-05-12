@@ -1,0 +1,17 @@
+<!--
+  CHRISTOPHER BOAMAH MENSAH
+  REVATURE LLC
+-->
+<template>
+  <lightning-card class="card"
+    title="Thank you for your interest">
+      <div class="slds-var-m-around_medium">
+        <lightning-record-form
+          object-api-name={objectApiName}
+          fields={fields}
+          onsuccess={handleSuccess}
+          oncancel={handleCancel}>
+        </lightning-record-form>
+      </div>
+  </lightning-card>
+</template>
