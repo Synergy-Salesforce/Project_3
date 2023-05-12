@@ -1,17 +1,24 @@
 <template>
     <c-hero></c-hero>
     <div>
-        <div class="home-page-main-content">
-            <template lwc:if={showAllLocations}>
-                <c-locations-main></c-locations-main>
-            </template>
-            <template lwc:else>
-                <c-property-home-list-partial></c-property-home-list-partial>
-            </template>
-        </div>
-        <div class="home-page-sidebar">
-            <!-- <c-tour-request-form></c-tour-request-form> -->
-            <c-tour-requests></c-tour-requests>
-        </div>
+        <section class="flex-content3">
+            <main class="main">
+                <div class="home-page-main-content">
+                    <template lwc:if={showAllLocations}>
+                        <c-locations-main></c-locations-main>
+                    </template>
+                    <template lwc:else>
+                        <c-property-home-list-partial></c-property-home-list-partial>
+                    </template>
+                </div>
+            </main>
+            <aside class="sidebar-second">
+                <div class="home-page-sidebar">
+                    <!-- <c-tour-request-form></c-tour-request-form> -->
+
+                    <c-tour-requests></c-tour-requests>
+                </div>    
+            </aside> 
+        </section> 
     </div>
 </template>

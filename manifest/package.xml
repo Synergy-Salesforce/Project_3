@@ -1,28 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>mainContainer</members>
+        <members>propertyChildPartial</members>
         <name>LightningComponentBundle</name>
-    </types>
-    <types>
-        <members>Property__c</members>
-        <members>Unit__c</members>
-        <members>Application__c</members>
-        <members>Image</members>
-        <name>CustomObject</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>CustomField</name>
-    </types>
-    <types>
-        <members>Property_Record_Page</members>
-        <members>Unit_Record_Page</members>
-        <name>Flexipage</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>StaticResource</name>
     </types>
     <version>56.0</version>
 </Package>
