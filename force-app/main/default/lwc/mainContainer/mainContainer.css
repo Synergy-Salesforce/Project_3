@@ -12,8 +12,8 @@
     border: 3px solid black;
 }
 
-.main-content {
-    border: 3px #EAAA00 solid;
+.main-content{
+    border: 3px var(--secondary-color) solid;
 }
 
 .nav-link {
