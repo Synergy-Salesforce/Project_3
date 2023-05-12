@@ -3,15 +3,34 @@
         <div class="banner slds-grid">
             <img class="logo" src={logoUrl} alt="logo">
             <div class="slds-col_bump-left">
-                Locations - Apply - Login or Register/Logout
+                <a onclick={handleLocationsClick}>Locations</a> -
+                
+                <a onclick={handleApplicationClick}>Apply</a> -
+                <template lwc:if={isLoggedIn}>
+                    <a href={logoutUrl}>Logout</a>
+                </template>
+                <template lwc:else>
+                    <a href="/vforcesite/login">Login or Register</a>
+                </template>
             </div>
         </div>
 
         <div class="main-content">
             <template lwc:if={homePage}>
-                <c-home-page></c-home-page>
+                
+                <c-home-page show-all-locations={showAllLocations}></c-home-page>
             </template>
-            <!-- for other pages in the site we will add template directives to render those components instead -->
+            <template lwc:elseif={locationPage}>
+                <template lwc:if={recordId}>
+                    <c-single-location-page record-id={recordId}></c-single-location-page>
+                </template>
+            </template>
+            <template lwc:elseif={applicationPage}>
+                <!--<h1>Application Form</h1>-->
+              
+                <c-application-form></c-application-form>
+                
+            </template>
         </div>
     </div>
 </template>
