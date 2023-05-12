@@ -1,8 +1,12 @@
 @import 'c/sharedCss';
 
-.hero {
+.hero{
     background-color: var(--primary-color);
-    color: white;
+    color: #EAAA00; 
     text-align: center;
-    font-size: 3em;
+    font-size: 10vw;
+}
+
+.card{
+    background-color: var(--primary-color);
 }
