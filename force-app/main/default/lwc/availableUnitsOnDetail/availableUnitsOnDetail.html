@@ -12,7 +12,7 @@
                                 <div class="slds-m-top_small slds-grid slds-wrap">
                                     <div class="slds-col slds-size_6-of-12">
                                         <template for:each={unit.Images__r} for:item="img">
-                                            <c-child-unit key={img.Id} imgurl={img.Url}></c-child-unit>
+                                            <img key={img.Id} src={img.Url}/>
                                         </template>
                                     </div>
                                     <div class="slds-col slds-size_4-of-12">
