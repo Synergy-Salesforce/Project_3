@@ -7,7 +7,8 @@ import HAS_AVAILABLE_UNITS_FIELD from '@salesforce/schema/Property__c.Has_Availa
 import MAINTENANCE_FEES_FIELD from '@salesforce/schema/Property__c.Maintenance_Fees__c';
 import PETS_ALLOWED_FIELD from '@salesforce/schema/Property__c.Pets_Allowed__c';
 import TOTAL_UNITS_FIELD from '@salesforce/schema/Property__c.Total_Units__c';
-import getImagesNotFloorPlan from '@salesforce/apex/ImageController.getImagesNotFloorPlan';
+// import getImagesNotFloorPlan from '@salesforce/apex/ImageController.getImagesNotFloorPlan';
+import getPropertyWithImagesNoFloorPlans from '@salesforce/apex/ProperHelper.getPropertyWithImagesNoFloorPlans';
 
 export default class SingleLocationPage extends LightningElement {
     objectApiName = 'Property__c';
@@ -23,9 +24,14 @@ export default class SingleLocationPage extends LightningElement {
     }
     @api
     recordId;
-    @wire(getImagesNotFloorPlan, {recordId: '$recordId'})
-    images;
+    property;
 
     connectedCallback(){
+        getPropertyWithImagesNoFloorPlans({recordId: this.recordId})
+        .then((response) => {
+            this.property = response;
+        })
     }
+
+
 }

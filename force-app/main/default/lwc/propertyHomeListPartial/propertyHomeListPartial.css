@@ -1,19 +1,19 @@
 .container {
-    border: 3px #EAAA00 solid;
+    
     align-self: center;
     align-items: center;
     border-radius: 5px;
     color: #EAAA00;
     margin:5px;
     display: flex;
-    align-items: center;
+    align-items: normal;
     background-color: #002855;
     flex-direction: column;
     flex-wrap: nowrap;
-    width: 100vw;
+    width: 80%;
 }
 .title {
-    font-size: large;
+    font-size: x-large;
     font-style: Bold;
     color: #EAAA00;
 }

@@ -4,12 +4,24 @@
         <members>ProperHelper</members>
         <members>unitController</members>
         <members>ImageController</members>
+
         <name>ApexClass</name>
     </types>
     <types>
-        <members>childUnit</members>
+        <members>applicationForm</members>
         <members>availableUnitsOnDetail</members>
+        <members>childUnit</members>
+        <members>errorPanel</members>
+        <members>hero</members>
+        <members>homePage</members>
+        <members>locationsMain</members>
+        <members>locationsSub</members>
+        <members>mainContainer</members>
+        <members>propertyHomeListPartial</members>
+        <members>sharedCss</members>
         <members>singleLocationPage</members>
+        <members>tourRequestForm</members>
+        <members>tourRequests</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
