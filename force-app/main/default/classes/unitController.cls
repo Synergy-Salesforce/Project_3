@@ -11,10 +11,9 @@ public with sharing class unitController {
         Rent__c,
         Size_Sq_Ft__c,
         Available__c,
-        (SELECT Url FROM Images__R WHERE Image_Type__c = 'Floor Plan')
+        (SELECT Url FROM Images__r WHERE Image_Type__c = 'Floor Plan')
       FROM Unit__c
       WHERE Property__c =: recordId AND Available__c = TRUE
     ];
   }
 }
-

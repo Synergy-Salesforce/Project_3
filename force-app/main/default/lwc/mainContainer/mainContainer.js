@@ -2,11 +2,13 @@ import { LightningElement, wire } from 'lwc';
 import { subscribe, MessageContext, APPLICATION_SCOPE } from 'lightning/messageService';
 import MainChannel from '@salesforce/messageChannel/mainChannel__c';
 import LOGO_URL from '@salesforce/resourceUrl/Logo';
+import HAM_ICON from '@salesforce/resourceUrl/rows';
 import IS_GUEST from '@salesforce/user/isGuest';
 import { NavigationMixin } from 'lightning/navigation';
 
 
 export default class MainContainer extends LightningElement {
+    hamIcon = HAM_ICON;
     homePage = true;
     locationPage;
     applicationPage;
@@ -72,5 +74,27 @@ export default class MainContainer extends LightningElement {
 
     handleApplicationClick(e){
         this.updatePageMethod('applicationPage');
+    }
+
+    handleHamMenuClick() {
+      let navMenu = this.template.querySelector(".nav-menu");
+      let hamMenu = this.template.querySelector(".ham-menu");
+  
+      hamMenu.addEventListener("click", () => {
+        hamMenu.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+  
+      this.template.querySelectorAll(".nav-link")
+        .forEach(i => i.addEventListener("click", () => {
+          hamMenu.classList.remove("active");
+          navMenu.classList.remove("active");
+        }));
+    }
+
+    handleHomeClick() {
+      this.updatePageMethod('homePage');
+      this.showAllLocations = false;
+      this.recordId = null;
     }
 }
