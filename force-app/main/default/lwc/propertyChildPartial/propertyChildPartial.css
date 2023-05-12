@@ -1,12 +1,12 @@
 .container {
-    border: 3px #EAAA00 solid;
+    
     align-self: center;
-    align-items: center;
+    align-items: normal;
     border-radius: 5px;
     color: #EAAA00;
     margin:5px;
     display: flex;
-    align-items: center;
+    align-items: normal;
     background-color: #002855;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -21,9 +21,9 @@
     display: flex;
     flex-flow: row wrap;
     position: relative;
-    align-self: center;
-
-    min-width: 95%;
+    align-self: normal;
+    align-items: normal;
+    width: 95%;
     align-items:normal;
     flex-direction: row;
     color: #002855;
@@ -31,7 +31,19 @@
     padding: 0px 0px 0px 0px;
     justify-content: space-between;
     border: #002855;
+
+    
 }
+a{
+    text-decoration: none;
+
+}
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+
+
 
 .item{
    align-self: auto; 

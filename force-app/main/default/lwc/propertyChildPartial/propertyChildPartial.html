@@ -1,3 +1,14 @@
 <template>
-    <img class='img' src={newimgurl}/>
+    <div class="container">
+        <a onclick={PropClick}>
+    <lightning-card class="card">
+        
+        <img class='img' src={newimgurl}/>
+        <span class="item" style='font-size:26px'>{prop.Name}</span>
+        <span class="item" style='font-size:18px'>{prop.City__c}, {prop.State__c} </span>
+        <lightning-badge label={prop.Number_Available_Units__c}></lightning-badge> Units Available
+        
+    </lightning-card>
+</a>
+    </div>
 </template>

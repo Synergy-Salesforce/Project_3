@@ -11,32 +11,14 @@ import mainChannel from '@salesforce/messageChannel/mainChannel__c';
 
 export default class PropertyHomeListPartial extends LightningElement {
 @api recordId;
-
-
 @wire(getPropList)
 propList;
 propImgUrl;
+@api
 prop;
 
-@wire(MessageContext)
-mContext;
-
-getDaImg()
-{
-this.propImgUrl= this.prop.Images__r[0].Url;
-console.log(this.propImgUrl);
-}
 
 
-
-handlePropertyClick(e)
-{
-    let publishRecordId = e.target.querySelector('input').value;
-    const payload = {updatePage : 'locationPage', recordId : publishRecordId};
-    publish(this.mContext, mainChannel, payload);
-
-    // console.log(e.target.querySelector('input').value);
-}
 
 
 
