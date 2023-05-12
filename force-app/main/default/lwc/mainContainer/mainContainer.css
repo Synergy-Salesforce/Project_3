@@ -52,13 +52,12 @@
     text-align: center;
     flex-direction: column;
     background-color: var(--primary-color);
-    width: 100%;
     z-index: 1;
     transition: 0.5s;
-    position: fixed;
+    /* position: fixed; */
     gap: 25px;
-    left: 100%;
-    top: 200px;
+    /* left: 100%; */
+    /* top: 200px; */
     transition: 0.5s;
   }
 
