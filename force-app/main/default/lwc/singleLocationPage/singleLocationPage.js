@@ -24,11 +24,14 @@ export default class SingleLocationPage extends LightningElement {
     }
     @api
     recordId;
-    @wire(getPropertyWithImagesNoFloorPlans, {recordId: '$recordId'})
     property;
-    images;
 
     connectedCallback(){
-        this.images = this.property.Images__r[0];
+        getPropertyWithImagesNoFloorPlans({recordId: this.recordId})
+        .then((response) => {
+            this.property = response;
+        })
     }
+
+
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Guardian__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Contact for when child household member is selected</description>
+    <externalId>false</externalId>
+    <label>Guardian</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>House Members (Guardian)</relationshipLabel>
+    <relationshipName>House_Members1</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

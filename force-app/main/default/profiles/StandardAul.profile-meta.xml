@@ -154,6 +154,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ImageController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>LightningForgotPasswordController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -294,9 +298,19 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.Property__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Case.SLAViolation__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.Unit__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -331,6 +345,86 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Unit__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>House_Member__c.Added_Description_Additional_Details__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>House_Member__c.Car_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>House_Member__c.Color__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>House_Member__c.Contact__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>House_Member__c.Guardian__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>House_Member__c.Human_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>House_Member__c.Insured__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>House_Member__c.License_Plate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>House_Member__c.Make__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>House_Member__c.Model__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>House_Member__c.Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>House_Member__c.Number_of_Pets__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>House_Member__c.Pet_Breeds__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>House_Member__c.Pet_Fees__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>House_Member__c.Relation__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>House_Member__c.Size__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -391,6 +485,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Opportunity.TrackingNumber__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Payment_Due__c.Received__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -538,6 +637,31 @@
         <field>Unit__c.Url_Field__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Vacancy_Notice__c.Contact__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Vacancy_Notice__c.Date_of_Vacancy__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Vacancy_Notice__c.Property__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Vacancy_Notice__c.Reason__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Vacancy_Notice__c.Unit_Condition__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <pageAccesses>
         <apexPage>AnswersHome</apexPage>
         <enabled>false</enabled>
@@ -630,6 +754,21 @@
         <apexPage>UnderConstruction</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>House_Member__c.Cars</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>House_Member__c.People</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>House_Member__c.Pets</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
     <tabVisibilities>
         <tab>Application_Form_Test_Page</tab>
         <visibility>DefaultOff</visibility>
@@ -639,8 +778,16 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
+        <tab>House_Member__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
         <tab>Nick_s_LWC_Tester</tab>
         <visibility>DefaultOff</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Payment_Due__c</tab>
+        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>Property__c</tab>
@@ -656,6 +803,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>Unit__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Vacancy_Notice__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <userLicense>Salesforce Platform</userLicense>

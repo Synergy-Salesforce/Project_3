@@ -17,8 +17,6 @@ export default class locationsSub extends LightningElement {
         let publishRecordId = this.property.Id;
         const payload = {updatePage : 'locationPage', recordId : publishRecordId};
         publish(this.mContext, mainChannel, payload);
-
-        // console.log (this.property.Id);
     }
    
     

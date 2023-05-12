@@ -152,13 +152,12 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ReadWrite</externalSharingModel>
+    <externalSharingModel>Private</externalSharingModel>
     <label>Application</label>
     <nameField>
-        <displayFormat>A-{00000}</displayFormat>
         <label>Application Name</label>
         <trackHistory>false</trackHistory>
-        <type>AutoNumber</type>
+        <type>Text</type>
     </nameField>
     <pluralLabel>Applications</pluralLabel>
     <searchLayouts></searchLayouts>

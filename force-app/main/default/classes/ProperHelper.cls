@@ -3,7 +3,7 @@ public without sharing class ProperHelper {
     public ProperHelper() {
 
     }
-    
+
     @AuraEnabled(cacheable=true)
     public static List<Property__c> getProps(){
 
@@ -18,6 +18,20 @@ public without sharing class ProperHelper {
     public static List<Property__c> getPropsAvailable(){
 
         return [SELECT Name, City__c,State__c,Number_Available_Units__c, (SELECT URL From Images__r WHERE Image_Type__c = 'Main')FROM Property__c WHERE Has_Available_Units__c=TRUE];
+    }
+
+    @AuraEnabled(cacheable=true)
+    public static List<Property__c> getPropertyWithImagesNoFloorPlans(String recordId){
+        return [
+            SELECT Id,
+            (
+                SELECT Url
+                FROM Images__r
+                WHERE Image_Type__c != 'Floor Plan' AND
+                Property__c = :recordId
+            )
+            FROM Property__c WHERE Id = :recordId
+        ];
     }
 
 }

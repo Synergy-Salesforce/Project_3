@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Human_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Human Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Adult</fullName>
+                <color>#66CCCC</color>
+                <default>false</default>
+                <label>Adult</label>
+            </value>
+            <value>
+                <fullName>Child</fullName>
+                <color>#33FF33</color>
+                <default>false</default>
+                <label>Child</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

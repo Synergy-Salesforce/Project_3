@@ -37,6 +37,9 @@
     <tabs>standard-Contact</tabs>
     <tabs>Tour__c</tabs>
     <tabs>Tour_Request__c</tabs>
+    <tabs>House_Member__c</tabs>
+    <tabs>Vacancy_Notice__c</tabs>
+    <tabs>Payment_Due__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Property_Managment_UtilityBar</utilityBar>
 </CustomApplication>

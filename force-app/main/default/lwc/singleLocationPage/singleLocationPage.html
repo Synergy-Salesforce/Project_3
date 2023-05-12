@@ -13,25 +13,19 @@
         <lightning-output-field field-name={fields.petsAllowedField}></lightning-output-field>
         <lightning-output-field field-name={fields.totalUnitsField}></lightning-output-field>
     </lightning-record-view-form>
-    <div class="slds-carousel">
-        <div class="slds-carousel__stage">
-            <div class="slds-carousel__panels">
-                <template for:each={images.data} for:item="image">
-                    <div id={image.Id} key={image.Id} class="slds-carousel__panel" role="tabpanel" aria-hidden="true">
-                        <div class="slds-carousel__image">
-                            <img src={image.Url} alt="Image of the property."/>
-                        </div>
-                    </div>
+    <template lwc:if={property}>
+        <template for:each={property} for:item="prop">
+            <lightning-carousel key={prop.Id}>
+                <template for:each={prop.Images__r} for:item="image">
+                    <lightning-carousel-image key={image.Id}
+                        src={image.Url}
+                        alternative-text="Image of the {property.Name}"
+                        class="carousel-image"
+                        >
+                    </lightning-carousel-image>
                 </template>
-                <ul class="slds-carousel__indicators" role="tablist">
-                    <template for:each={images.data} for:item="image">
-                       <li key={image.Id} class="slds-carousel__indicator" role="presentation">
-                           <a class="slds-carousel__indicator-action" href="#" role="tab" aria-selected="false" tabindex="-1" aria-control={image.Id}></a>
-                       </li>
-                    </template>
-                </ul>
-            </div>
-        </div>
-    </div>
+            </lightning-carousel>
+        </template>
+    </template>
     <c-available-units-on-detail record-id={recordId}></c-available-units-on-detail>
 </template>

@@ -33,6 +33,16 @@
     border: #002855;
 }
 
+.propName{
+    /* font-size: 5vw; */
+    font-size: 10px;
+}
+
+.itemDetail{
+    /* font-size: 3vw; */
+    font-size: 5px;
+}
+
 .item{
    align-self: auto; 
    align-items: center;

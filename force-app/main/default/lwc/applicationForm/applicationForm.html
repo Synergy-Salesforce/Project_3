@@ -3,15 +3,25 @@
   REVATURE LLC
 -->
 <template>
-  <lightning-card class="card"
+  <lightning-card
     title="Thank you for your interest">
-      <div class="slds-var-m-around_medium">
-        <lightning-record-form
-          object-api-name={objectApiName}
-          fields={fields}
-          onsuccess={handleSuccess}
-          oncancel={handleCancel}>
-        </lightning-record-form>
-      </div>
+      <lightning-record-edit-form
+        class="lightform"
+        object-api-name={objectApiName}
+        onsubmit={handleSubmit}
+        recordid="recordId">
+        <lightning-input-field field-name={FIRSTNAME}></lightning-input-field>
+        <lightning-input-field field-name={LASTNAME}></lightning-input-field>
+        <lightning-input-field field-name={MOBILE}></lightning-input-field>
+        <lightning-input-field field-name={EMAIL}></lightning-input-field>
+        <lightning-input-field field-name={MOVEINDATE}></lightning-input-field>
+        <lightning-input-field field-name={PROPERTY}></lightning-input-field>
+        <lightning-input-field field-name={UNIT}></lightning-input-field> 
+
+        <lightning-button variant="brand" type="submit" label="Submit"></lightning-button>
+      </lightning-record-edit-form>
+      <template lwc:if={showMsg}>
+        <div class="showMsg">Your application has been submitted!</div>
+      </template>
   </lightning-card>
 </template>

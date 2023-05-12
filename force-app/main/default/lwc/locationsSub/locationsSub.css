@@ -13,7 +13,7 @@
     color: #002855;
 }
 .container {
-    
+    border: 3px #EAAA00 solid;
     border-radius: 5px;
     color: #002855;
     margin:5px;

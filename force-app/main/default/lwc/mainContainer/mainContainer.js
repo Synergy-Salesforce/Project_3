@@ -2,17 +2,21 @@ import { LightningElement, wire } from 'lwc';
 import { subscribe, MessageContext, APPLICATION_SCOPE } from 'lightning/messageService';
 import MainChannel from '@salesforce/messageChannel/mainChannel__c';
 import LOGO_URL from '@salesforce/resourceUrl/Logo';
-// import IS_GUEST from '@salesforce/user/isGuest';
+import HAM_ICON from '@salesforce/resourceUrl/rows';
+import IS_GUEST from '@salesforce/user/isGuest';
+import { NavigationMixin } from 'lightning/navigation';
 
 
 export default class MainContainer extends LightningElement {
+    hamIcon = HAM_ICON;
     homePage = true;
     locationPage;
     applicationPage;
     showAllLocations = false;
 
-    // isLoggedIn = !IS_GUEST;
-    isLoggedIn = false;
+    isLoggedIn = !IS_GUEST;
+
+    logoutUrl = window.location.origin + '/secur/logout.jsp';
 
     recordId;
 
@@ -72,11 +76,25 @@ export default class MainContainer extends LightningElement {
         this.updatePageMethod('applicationPage');
     }
 
-    handleLoginOrRegister(e){
-        console.log('login or register');
+    handleHamMenuClick() {
+      let navMenu = this.template.querySelector(".nav-menu");
+      let hamMenu = this.template.querySelector(".ham-menu");
+  
+      hamMenu.addEventListener("click", () => {
+        hamMenu.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+  
+      this.template.querySelectorAll(".nav-link")
+        .forEach(i => i.addEventListener("click", () => {
+          hamMenu.classList.remove("active");
+          navMenu.classList.remove("active");
+        }));
     }
 
-    handleLogout(e){
-        console.log('logout');
+    handleHomeClick() {
+      this.updatePageMethod('homePage');
+      this.showAllLocations = false;
+      this.recordId = null;
     }
 }

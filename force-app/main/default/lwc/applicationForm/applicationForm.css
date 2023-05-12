@@ -1,4 +1,4 @@
-.card{
-    max-width: 200px;
-    align-self: center;
+.showMsg {
+  font-size: large;
+  text-align: center;
 }

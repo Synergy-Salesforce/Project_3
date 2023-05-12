@@ -46,6 +46,9 @@
     <tabs>Tour__c</tabs>
     <tabs>Tour_Request__c</tabs>
     <tabs>Application_Form_Test_Page</tabs>
+    <tabs>House_Member__c</tabs>
+    <tabs>Vacancy_Notice__c</tabs>
+    <tabs>Payment_Due__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>LightningSales_UtilityBar</utilityBar>
 </CustomApplication>

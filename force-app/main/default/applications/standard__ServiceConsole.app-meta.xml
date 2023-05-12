@@ -183,7 +183,16 @@
     <tabs>Property__c</tabs>
     <tabs>Tour__c</tabs>
     <tabs>Tour_Request__c</tabs>
+    <tabs>House_Member__c</tabs>
+    <tabs>Vacancy_Notice__c</tabs>
+    <tabs>Payment_Due__c</tabs>
     <workspaceConfig>
+        <mappings>
+            <tab>House_Member__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Payment_Due__c</tab>
+        </mappings>
         <mappings>
             <tab>Property__c</tab>
         </mappings>
@@ -192,6 +201,9 @@
         </mappings>
         <mappings>
             <tab>Tour__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Vacancy_Notice__c</tab>
         </mappings>
         <mappings>
             <tab>standard-Account</tab>
