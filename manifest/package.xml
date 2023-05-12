@@ -3,11 +3,13 @@
     <types>
         <members>ProperHelper</members>
         <members>unitController</members>
+        <members>ImageController</members>
         <name>ApexClass</name>
     </types>
     <types>
         <members>childUnit</members>
         <members>availableUnitsOnDetail</members>
+        <members>singleLocationPage</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>

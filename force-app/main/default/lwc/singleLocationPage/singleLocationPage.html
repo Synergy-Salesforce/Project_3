@@ -14,5 +14,8 @@
     <lightning-output-field field-name={fields.totalUnitsField}></lightning-output-field>
     </lightning-record-view-form>
 <!--TODO: Add child component for available units (user story # 15)-->
+    <template for:each={images.data} for:item="image">
+        <img key={image.Id} src={image.Url}>
+    </template>
     <c-available-units-on-detail record-id={recordId}></c-available-units-on-detail>
 </template>
