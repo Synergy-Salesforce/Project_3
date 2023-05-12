@@ -25,7 +25,13 @@
     <lightning-input-field field-name={PHONE}></lightning-input-field>
     <lightning-input-field field-name={PROPERTY}></lightning-input-field>
     <lightning-input-field field-name={AVAILABLE_DATE}></lightning-input-field>
+
 </lightning-record-edit-form>
-        </lightning-card>
+
+        <template if:true={showMsg}>
+        <div class = "ShowMsg">Thanks for scheduling a tour with us!</div>
+      </template>
+
+</lightning-card>
 <!-- this should be a comment --> 
 </template>
