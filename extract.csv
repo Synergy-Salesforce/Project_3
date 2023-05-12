@@ -1,0 +1,5 @@
+
+
+Lake Side View
+
+$ sfdx force:data:bulk:upsert -i id -f extract.csv -u test-n3jqiqhwlae2@example.com[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D -s[2~ [D[CAccount -u test-n3jqiqhwlae2@example.com

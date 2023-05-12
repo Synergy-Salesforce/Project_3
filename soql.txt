@@ -1,0 +1,22 @@
+SELECT Name, url__c, Unit__r.Name, Property__r.Name FROM PropertyImage__c WHERE Property__r.Id= 'a018F000002Zhv3QAC'
+
+
+
+
+
+
+    myAction: function (component, event, helper) {
+        component.set("v.Columns", [
+            { label: "Account Name", fieldName: "Name", type: "text" },
+            { label: "Phone", fieldName: "Phone", type: "phone" },
+            { label: "State", fieldName: "BillingState", type: "text" },
+            { label: "Country", fieldName: "BillingCountry", type: "text" },
+        ]);
+
+        var action = component.get("c.getAccounts");
+        action.setCallback(this, function (data) {
+            component.set("v.accList", data.getReturnValue());
+        });
+        $A.enqueueAction(action);
+
+    }
