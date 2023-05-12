@@ -1,10 +1,31 @@
 <template>
-    <lightning-record-form
+    <!--
+    <lightning-card>
+    <div class="title" >Request a Tour!</div>
+    <lightning-record-form class = "lightform"
     object-api-name={objectApiName}
     fields={fields}
-    onsuccess={handleSuccess}   
+    onsuccess={handleSuccess} 
+    onsubmit={onSubmitHandler}  
 >
-</lightning-record-form>
+    </lightning-record-form>
+    </lightning-card>
+-->
 
+
+    <lightning-card>
+        <div class="title" >Request a Tour!</div>
+        <lightning-record-edit-form class = "lightform"
+        object-api-name={objectApiName}
+        onsuccess={handleSuccess} 
+        onsubmit={onSubmitHandler}  
+    >
+    <lightning-input-field field-name={NAME}></lightning-input-field>
+    <lightning-input-field field-name={EMAIL}></lightning-input-field>
+    <lightning-input-field field-name={PHONE}></lightning-input-field>
+    <lightning-input-field field-name={PROPERTY}></lightning-input-field>
+    <lightning-input-field field-name={AVAILABLE_DATE}></lightning-input-field>
+</lightning-record-edit-form>
+        </lightning-card>
 <!-- this should be a comment --> 
 </template>
