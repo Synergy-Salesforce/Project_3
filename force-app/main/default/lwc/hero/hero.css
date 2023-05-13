@@ -1,6 +1,6 @@
 @import 'c/sharedCss';
 
-@media screen (max-width: 600px) {
+@media(max-width: 600px) {
     .hero-small{
         font-size: 40vw;
     }
@@ -10,7 +10,7 @@
     background-color: var(--primary-color);
     color: #EAAA00; 
     text-align: center;
-    font-size: 60px;
+    font-size: 5vw;
 }
 
 .card{
