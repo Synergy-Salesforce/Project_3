@@ -46,4 +46,18 @@ public without sharing class ProperHelper {
       ];
     }
 
+    @AuraEnabled(Cacheable=true)
+    public static list<House_Member__c> getHouseHoldMembersList(String recordId) {
+      return [
+        SELECT
+          Id,
+          Name,
+          Human_Type__c,
+          Relation__c,
+          Contact__c
+        FROM House_Member__c
+        WHERE Contact__c ='0038b000030f4DsAAI' AND RecordType.Name IN ('People')
+      ];
+    }
+
 }

@@ -1,10 +1,10 @@
-<template>
-    <div class="cardstyl">
+<template >
+    <div class ="cardstyl">
     <lightning-card>
-        <div class="title">{householddata.Name}</div>
-        <div class="txtdetail"> {householddata.Property__r.Name}, {householddata.Unit__r.Name}</div>
-        <div class="txtdetail"> {ConId}</div>
-    </lightning-card>
+        
+        <div class="title"> {householddata.Property__r.Name}, {householddata.Unit__r.Name}</div>
+        
+    
 
     <lightning-record-edit-form
     class="lightform"
@@ -14,9 +14,10 @@
 
 >
     <lightning-input-field field-name={nameField}> </lightning-input-field>
+    <div class="slds-grid">
     <lightning-input-field field-name={typeField}> </lightning-input-field>
     <lightning-input-field field-name={relationField}> </lightning-input-field>
-    
+    </div>
     <div class="slds-var-m-top_medium">
         <lightning-button variant="brand" type="submit" label="Save">
         </lightning-button>
@@ -25,5 +26,17 @@
         <div class="showMsg">The Member has been updated.</div>
     </template>
 </lightning-record-edit-form>
+    
+    
+        
+    <lightning-datatable
+    class="slds-max-medium-table_stacked"
+    key-field="Id"
+    data={householdlist.data}
+    columns={columns}
+    onrowaction={handleRowAction}
+    hide-checkbox-column="true"
+    ></lightning-datatable>
+       </lightning-card>
     </div>
     </template>

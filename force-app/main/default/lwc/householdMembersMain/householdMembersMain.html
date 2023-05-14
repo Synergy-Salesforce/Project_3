@@ -1,4 +1,5 @@
 <template>
+    <div class="card">
     <template for:each={household.data} for:item="hhm">
         <c-household-members-sub
         key ={hhm.Id} 
@@ -6,5 +7,6 @@
         recordid={hhm.Id}>
         </c-household-members-sub>
     </template>
+    </div>
 
 </template>
