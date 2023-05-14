@@ -42,7 +42,7 @@ public without sharing class ProperHelper {
           Property__r.Name,
           Unit__r.Name
         FROM Contact
-        WHERE Id ='0038b000030f4DsAAI' AND RecordType.Name IN ('Tenant')
+        WHERE Id = '0038b000030f4DsAAI' AND RecordType.Name IN ('Tenant')
       ];
     }
 

@@ -9,11 +9,12 @@ export default class HouseholdMembersMain extends LightningElement {
    
 
     @api householddata;
-    @api recordid
-    @api ConId
-    @api recordId = '0038b000030f4DsAAI'
+    @api recordid;
+    @api ConId;
+    @api recordId;
+    //recordId = '0038b000030f4DsAAI'
     @wire(getHouseHoldMembers) household;
-
+    //recordId = this.household.recordId;
     connectedCallback(){
         getHouseHoldMembers({recordId: this.recordId})
        .then((response) => {

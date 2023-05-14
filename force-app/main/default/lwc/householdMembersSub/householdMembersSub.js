@@ -25,7 +25,7 @@ export default class HouseholdMembersSub extends LightningElement {
     @api householddata;
     @api objectApiName;
      showMsg = false;
-    //data = [];
+    
     autoCloseTime = 1000;
     @api ConId 
     objectApiName ='House_Member__c'
@@ -51,11 +51,17 @@ export default class HouseholdMembersSub extends LightningElement {
         }
     }
     
+    connectedCallback(){
+        getHouseHoldMembersList({recordId: this.recordId})
+       .then((response) => {
+           this.members = response;
+       })
+   }
  
      handleSubmit(event) {
         event.preventDefault();
     const fields = event.detail.fields;
-    fields.Contact__c = this.recordid
+    fields.Contact__c = this.recordId
     fields.	RecordTypeId ='0128b000000dNzpAAE'
     this.template.querySelector('.lightform').submit(fields);
     this.handleReset();
@@ -71,9 +77,7 @@ export default class HouseholdMembersSub extends LightningElement {
      refreshData() {
         
         refreshApex(this.wiredAccountsResult);
-        //refreshApex(this.objectApiName);
-        //eval("$A.get('e.force:refreshView').fire();");
-        
+        refreshApex(this.members);
      }
  
     
