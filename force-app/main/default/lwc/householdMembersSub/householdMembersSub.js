@@ -6,19 +6,16 @@ import CONTACT from '@salesforce/schema/House_Member__c.Contact__c';
 import RECORDTYPE from '@salesforce/schema/House_Member__c.RecordTypeId';
 import getHouseHoldMembersList from '@salesforce/apex/ProperHelper.getHouseHoldMembersList';
 import { refreshApex } from '@salesforce/apex';
+import { deleteRecord } from 'lightning/uiRecordApi';
 
-const actions = [
-    { label: 'Select', name: 'select' },
-    { label: 'Delete', name: 'delete' }
-];
+
 const columns = [
    
     { label: 'Name', fieldName: 'Name',fixedWidth: 100 },
     { label: 'Type', fieldName: 'Human_Type__c',fixedWidth: 90 },
     { label: 'Relation', fieldName: 'Relation__c',fixedWidth: 90 },
-    { type: 'action', typeAttributes: { rowActions: actions, menuAlignment: 'right' } },
+    
 ];
-
 
 
 export default class HouseholdMembersSub extends LightningElement {
@@ -27,63 +24,97 @@ export default class HouseholdMembersSub extends LightningElement {
     @api MemberId
     @api householddata;
     @api objectApiName;
-    @track showMsg = false;
-    data = [];
-    autoCloseTime = 5000;
+     showMsg = false;
+    //data = [];
+    autoCloseTime = 1000;
     @api ConId 
     objectApiName ='House_Member__c'
     error;
-    @track columns = columns;
+    columns = columns;
     nameField = NAME_FIELD;
     typeField = TYPE;
     relationField = RELATION;
+    @track selectedRecord;
+    @track wiredAccountsResult = [];
+    @track members= [];
+    error;
+    @track showForm = true;
+    @wire(getHouseHoldMembersList)
+    wiredAccounts(result) {
+        this.wiredAccountsResult = result;
+        if (result.data) {
+            this.members = result.data;
+            this.error = undefined;
+        } else if (result.error) {
+            this.error = result.error;
+            this.members = undefined;
+        }
+    }
     
-     @wire(getHouseHoldMembersList) householdlist;
-    handleSubmit(event) {
+ 
+     handleSubmit(event) {
         event.preventDefault();
     const fields = event.detail.fields;
     fields.Contact__c = this.recordid
     fields.	RecordTypeId ='0128b000000dNzpAAE'
     this.template.querySelector('.lightform').submit(fields);
-    this.handleReset()
+    
     this.showMsg = true
         setTimeout(() => {
         this.showsuccess();
     }, this.autoCloseTime);
+    
+    
+    } 
+
+         // in order to refresh your data, execute this function:
+     refreshData() {
         
-    }
+        refreshApex(this.wiredAccountsResult);
+        refreshApex(this.objectApiName);
+        //eval("$A.get('e.force:refreshView').fire();");
+        this.handleReset();
+     }
+ 
+    
     handleReset(event) {
         const inputFields = this.template.querySelectorAll(
             'lightning-input-field'
         );
-        refreshApex(this.householdlist);
+        
         if (inputFields) {
             inputFields.forEach(field => {
                 field.reset();  
             });
+        
         }
+        
      }
      showsuccess(e){
         this.showMsg = false
+        this.refreshData();
+        
      }
 
-     handleRowAction(event) {
-        const action = event.detail.action;
-        const row = event.detail.row;
-        switch (action.name) {
-            case 'delete':
-                const rows = this.data;
-                const rowIndex = rows.indexOf(row);
-                rows.splice(rowIndex, 1);
-                this.data = rows;
-                break;
-                
-            case 'select':
-                
-                break;
-                }
-
+     handelSelection(event) {
+        if (event.detail.selectedRows.length > 0) {
+          this.selectedRecord = event.detail.selectedRows[0].Id;
         }
+        //this.MemberId = this.selectedRecord;
+      }
+
+      deleteRecord() {
+        deleteRecord(this.selectedRecord)
+          .then(() => {
+            
+            this.refreshData();
+            this.handleReset();
+            
+          })
+          .catch(error => {
+          })
+      }
+
 }
 
     

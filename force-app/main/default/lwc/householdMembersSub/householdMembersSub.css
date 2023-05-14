@@ -6,14 +6,20 @@
     align-items: center;
     align-content: center;
     align-self: center;
+    
+}
+.button{
+
+    margin-right: 10px;
 }
 
 .dtable{
     max-width:fit-content;
+    
 }
 
 .title{
-    font-size: medium;
+    font-size: x-large;
 
 }
 .txtdetail{
