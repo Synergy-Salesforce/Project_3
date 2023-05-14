@@ -1,0 +1,14 @@
+
+.cardstyl{
+    background-color: rgb(233, 238, 241);
+    max-width:fit-content;
+}
+
+.title{
+    font-size: medium;
+
+}
+.txtdetail{
+font-size: small;
+
+}

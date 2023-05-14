@@ -1,0 +1,30 @@
+<template>
+    <div class="alignment-container slds-grid slds-grid_vertical">
+        <div class="banner slds-grid">
+            <img class="logo" src={logoUrl} alt="logo">
+            <div class="slds-col_bump-left">
+
+              <div class="ham-menu">
+                <a id="ham-link" onclick={handleHamMenuClick}>
+                  <img src={hamIcon} alt="hamburger menu icon">
+                </a>
+              </div>
+              
+              <ul class="nav-menu">
+                <li class="nav-item">
+                  <a class="nav-link" onclick={handleHomeClick}>Home</a>
+                </li>
+                <li class="nav-item">
+                  <template lwc:if={isLoggedIn}>
+                    <a class="nav-link" href={logoutUrl}>Logout</a>
+                  </template>
+                  <template lwc:else>
+                      <a class="nav-link" href="/vforcesite/login">Login or Register</a>
+                  </template>
+                </li>
+              </ul>
+            </div>
+        </div>
+    </div>     
+
+</template>

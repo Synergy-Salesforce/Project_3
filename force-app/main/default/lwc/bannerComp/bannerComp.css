@@ -1,0 +1,80 @@
+@import 'c/sharedCss';
+
+.banner {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    margin: 0;
+    min-height: 200px;
+}
+
+.logo {
+    border: 3px solid black;
+    
+    max-width: 30vw;
+    
+    aspect-ratio: 411/235;
+}
+
+.main-content{
+    border: 3px var(--secondary-color) solid;
+}
+
+.nav-link {
+  color: white !important;
+  text-decoration: none !important; 
+  transition: 0.3s ease !important;
+}
+
+.nav-link:hover {
+  color: var(--secondary-color) !important;
+}
+
+.nav-block {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+}
+
+.nav-menu {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  gap: 50px;
+}
+
+.ham-menu {
+  display: none;
+}
+.appform{
+  width: 60vw;
+}
+@media(max-width:780px) {
+  .ham-menu {
+    display: block;
+  }
+
+  /* .nav-link {
+    display: block;
+  } */
+  
+  .nav-menu {
+    display: none;
+    /* text-align: center;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    z-index: 1;
+    transition: 0.5s;
+    /* position: fixed; */
+
+    /* gap: 25px; */
+    /* left: 100%; */
+    /* top: 200px; */
+    /* transition: 0.5s; */
+  }
+
+  .nav-menu.active {
+    /* left: 0; */
+    display: block;
+  }
+}

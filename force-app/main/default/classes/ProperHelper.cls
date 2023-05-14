@@ -33,5 +33,17 @@ public without sharing class ProperHelper {
             FROM Property__c WHERE Id = :recordId
         ];
     }
+    @AuraEnabled(Cacheable=true)
+    public static list<Contact> getHouseHoldMembers(String recordId) {
+      return [
+        SELECT
+          Id,
+          Name,
+          Property__r.Name,
+          Unit__r.Name
+        FROM Contact
+        WHERE Id ='0038b000030f4DsAAI' AND RecordType.Name IN ('Tenant')
+      ];
+    }
 
 }

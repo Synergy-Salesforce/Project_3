@@ -1,0 +1,29 @@
+<template>
+    <div class="cardstyl">
+    <lightning-card>
+        <div class="title">{householddata.Name}</div>
+        <div class="txtdetail"> {householddata.Property__r.Name}, {householddata.Unit__r.Name}</div>
+        <div class="txtdetail"> {ConId}</div>
+    </lightning-card>
+
+    <lightning-record-edit-form
+    class="lightform"
+    object-api-name={objectApiName}
+    record-id={MemberId}
+    onsubmit={handleSubmit}
+
+>
+    <lightning-input-field field-name={nameField}> </lightning-input-field>
+    <lightning-input-field field-name={typeField}> </lightning-input-field>
+    <lightning-input-field field-name={relationField}> </lightning-input-field>
+    
+    <div class="slds-var-m-top_medium">
+        <lightning-button variant="brand" type="submit" label="Save">
+        </lightning-button>
+    </div>
+    <template if:true={showMsg}>
+        <div class="showMsg">The Member has been updated.</div>
+    </template>
+</lightning-record-edit-form>
+    </div>
+    </template>
