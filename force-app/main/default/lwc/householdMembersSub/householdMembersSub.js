@@ -8,6 +8,7 @@ import getHouseHoldMembersList from '@salesforce/apex/ProperHelper.getHouseHoldM
 import { refreshApex } from '@salesforce/apex';
 
 const actions = [
+    { label: 'Select', name: 'select' },
     { label: 'Delete', name: 'delete' }
 ];
 const columns = [
@@ -75,6 +76,10 @@ export default class HouseholdMembersSub extends LightningElement {
                 const rowIndex = rows.indexOf(row);
                 rows.splice(rowIndex, 1);
                 this.data = rows;
+                break;
+                
+            case 'select':
+                
                 break;
                 }
 
