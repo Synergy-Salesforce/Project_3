@@ -58,7 +58,7 @@ export default class HouseholdMembersSub extends LightningElement {
     fields.Contact__c = this.recordid
     fields.	RecordTypeId ='0128b000000dNzpAAE'
     this.template.querySelector('.lightform').submit(fields);
-    
+    this.handleReset();
     this.showMsg = true
         setTimeout(() => {
         this.showsuccess();
@@ -71,9 +71,9 @@ export default class HouseholdMembersSub extends LightningElement {
      refreshData() {
         
         refreshApex(this.wiredAccountsResult);
-        refreshApex(this.objectApiName);
+        //refreshApex(this.objectApiName);
         //eval("$A.get('e.force:refreshView').fire();");
-        this.handleReset();
+        
      }
  
     
@@ -88,7 +88,8 @@ export default class HouseholdMembersSub extends LightningElement {
             });
         
         }
-        
+        const editForm = this.template.querySelector('lightning-record-edit-form');
+            editForm.recordId = null;
      }
      showsuccess(e){
         this.showMsg = false
@@ -100,7 +101,7 @@ export default class HouseholdMembersSub extends LightningElement {
         if (event.detail.selectedRows.length > 0) {
           this.selectedRecord = event.detail.selectedRows[0].Id;
         }
-        //this.MemberId = this.selectedRecord;
+        this.MemberId = this.selectedRecord;
       }
 
       deleteRecord() {
