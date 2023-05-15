@@ -12,11 +12,10 @@ export default class PetMaintenance extends LightningElement {
 
     @track showMsg = false;
     autoCloseTime = 5000; 
-    @api objectApiName;
     
       
     
-        NAME = "Name__c";
+        NAMER = "Name__c";
         NUMBER_OF_PETS = "Number_of_Pets__c";
         PET_BREED = "Pet_Breeds__c";
         SIZE = "Size__c";
