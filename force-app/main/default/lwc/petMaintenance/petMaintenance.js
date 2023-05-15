@@ -77,22 +77,13 @@ export default class PetMaintenance extends LightningElement {
 /* information for the second table */
 
 @wire(getListHouse)
-wiredhouseMemberList({error, data}){
-    if(data){
-        this.houseMember = data;
-        this.error = undefined;
-    } else if(error){
-        this.error = error;
-        this.houseMember = undefined;
-    }
-}
+data;
 
-    data = this.wiredhouseMemberList;
     columns = columns;
     record = {};
 
     connectedCallback() {
-        this.data = GenerateData({ amountOfRecords: 100 });
+        this.data = GenerateData({ amountOfRecords: 6 });
     }
 
     handleRowAction(event) {
