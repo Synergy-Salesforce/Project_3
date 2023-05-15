@@ -13,19 +13,5 @@
         <lightning-output-field field-name={fields.petsAllowedField}></lightning-output-field>
         <lightning-output-field field-name={fields.totalUnitsField}></lightning-output-field>
     </lightning-record-view-form>
-    <template lwc:if={property}>
-        <template for:each={property} for:item="prop">
-            <lightning-carousel key={prop.Id}>
-                <template for:each={prop.Images__r} for:item="image">
-                    <lightning-carousel-image key={image.Id}
-                        src={image.Url}
-                        alternative-text="Image of the {prop.Name}"
-                        class="slds-size_1-of-2"
-                        >
-                    </lightning-carousel-image>
-                </template>
-            </lightning-carousel>
-        </template>
-    </template>
     <c-available-units-on-detail record-id={recordId}></c-available-units-on-detail>
 </template>
