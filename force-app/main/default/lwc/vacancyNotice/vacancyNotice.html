@@ -1,0 +1,23 @@
+<template >
+    <div class="vacate">
+    <lightning-record-edit-form object-api-name="Vacancy_Notice__c" >
+        <!--<lightning-input-field field-name={nameField}></lightning-input-field>-->
+        Unit and Person to be Vacated
+        <lightning-output-field field-name="Unit__c"></lightning-output-field>
+        <lightning-output-field field-name="Property__c"></lightning-output-field>
+        <lightning-output-field field-name="Contact__c"></lightning-output-field>
+        Vacancy Information <br>
+        Date:
+        <lightning-input-field field-name='Date_of_Vacancy__c' variant="label-hidden"></lightning-input-field>
+        <lightning-input-rich-text field-name='Reason_Long__c'></lightning-input-rich-text>
+
+        <lightning-button
+            class="buttonn"
+            type="submit"
+            label="Submit Notice"
+        >
+        </lightning-button>
+    </lightning-record-edit-form>
+    </div>
+
+</template>

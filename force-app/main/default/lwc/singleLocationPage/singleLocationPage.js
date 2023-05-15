@@ -1,4 +1,4 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, api, wire } from 'lwc';
 import NAME_FIELD from '@salesforce/schema/Property__c.Name';
 import STREET_ADDRESS_FIELD from '@salesforce/schema/Property__c.Street_Address__c';
 import STATE_FIELD from '@salesforce/schema/Property__c.State__c';
@@ -7,6 +7,8 @@ import HAS_AVAILABLE_UNITS_FIELD from '@salesforce/schema/Property__c.Has_Availa
 import MAINTENANCE_FEES_FIELD from '@salesforce/schema/Property__c.Maintenance_Fees__c';
 import PETS_ALLOWED_FIELD from '@salesforce/schema/Property__c.Pets_Allowed__c';
 import TOTAL_UNITS_FIELD from '@salesforce/schema/Property__c.Total_Units__c';
+// import getImagesNotFloorPlan from '@salesforce/apex/ImageController.getImagesNotFloorPlan';
+import getPropertyWithImagesNoFloorPlans from '@salesforce/apex/ProperHelper.getPropertyWithImagesNoFloorPlans';
 
 export default class SingleLocationPage extends LightningElement {
     objectApiName = 'Property__c';
@@ -19,7 +21,17 @@ export default class SingleLocationPage extends LightningElement {
         maintenanceFeesField: MAINTENANCE_FEES_FIELD,
         petsAllowedField: PETS_ALLOWED_FIELD,
         totalUnitsField: TOTAL_UNITS_FIELD
-
     }
-    recordId = 'a008b00001WqyZkAAJ'; // TODO: remove hardcodedId
+    @api
+    recordId;
+    property;
+
+    connectedCallback(){
+        getPropertyWithImagesNoFloorPlans({recordId: this.recordId})
+        .then((response) => {
+            this.property = response;
+        })
+    }
+
+
 }

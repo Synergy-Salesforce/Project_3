@@ -3,22 +3,52 @@
         <div class="banner slds-grid">
             <img class="logo" src={logoUrl} alt="logo">
             <div class="slds-col_bump-left">
-                <a onclick={handleClickLocations}>Locations</a> - Apply - Login or Register/Logout
+
+              <div class="ham-menu">
+                <a id="ham-link" onclick={handleHamMenuClick}>
+                  <img src={hamIcon} alt="hamburger menu icon">
+                </a>
+              </div>
+              
+              <ul class="nav-menu">
+                <li class="nav-item">
+                  <a class="nav-link" onclick={handleHomeClick}>Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" onclick={handleLocationsClick}>Locations</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" onclick={handleApplicationClick}>Apply</a>
+                </li>
+                <li class="nav-item">
+                  <template lwc:if={isLoggedIn}>
+                    <a class="nav-link" href={logoutUrl}>Logout</a>
+                  </template>
+                  <template lwc:else>
+                      <a class="nav-link" href="/vforcesite/login">Login or Register</a>
+                  </template>
+                </li>
+              </ul>
+              
             </div>
         </div>
 
         <div class="main-content">
             <template lwc:if={homePage}>
-                <c-home-page></c-home-page>
+                
+                <c-home-page user-id={userId} show-all-locations={showAllLocations}></c-home-page>
             </template>
             <template lwc:elseif={locationPage}>
-                <!-- Be sure to add the recordId property to the location custom component-->
-                Location Page Goes Here
-                <div>
-                    {recordId}
-                </div>
+                <template lwc:if={recordId}>
+                    <c-single-location-page record-id={recordId}></c-single-location-page>
+                </template>
             </template>
-            <!-- for other pages in the site we will add template directives to render those components instead -->
+            <template lwc:elseif={applicationPage}>
+                <!--<h1>Application Form</h1>-->
+              
+                <c-application-form></c-application-form>
+                
+            </template>
         </div>
     </div>
 </template>

@@ -4,11 +4,10 @@
     
  <template if:true={thisHasBeenClick}>
     <lightning-card>
-    <lightning-flow flow-api-name={FlowAPiName}
-    flow-input-variables={FlowInputVariables}
-    onstatuschange={handleFlowEventsStatus}>    
-    </lightning-flow>
-</lightning-card>
+            <lightning-flow flow-api-name={FlowAPiName}
+            onstatuschange={handleFlowEventsStatus}>
+            </lightning-flow>
+    </lightning-card>
 </template>
     
 </template>

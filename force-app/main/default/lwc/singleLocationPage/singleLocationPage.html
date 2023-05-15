@@ -1,18 +1,31 @@
 <template>
-    <h1>Location Page</h1>
-    <!--TODO: Add Record View Form for property -->
+    <h2>Property Listing</h2>
     <lightning-record-view-form
     object-api-name={objectApiName}
     record-id={recordId}
     >
-    <lightning-output-field field-name={fields.nameField}></lightning-output-field>
-    <lightning-output-field field-name={fields.streetAddressField}></lightning-output-field>
-    <lightning-output-field field-name={fields.stateField}></lightning-output-field>
-    <lightning-output-field field-name={fields.zipCodeField}></lightning-output-field>
-    <lightning-output-field field-name={fields.hasAvailableUnitsField}></lightning-output-field>
-    <lightning-output-field field-name={fields.maintenanceFeesField}></lightning-output-field>
-    <lightning-output-field field-name={fields.petsAllowedField}></lightning-output-field>
-    <lightning-output-field field-name={fields.totalUnitsField}></lightning-output-field>
+        <lightning-output-field field-name={fields.nameField}></lightning-output-field>
+        <lightning-output-field field-name={fields.streetAddressField}></lightning-output-field>
+        <lightning-output-field field-name={fields.stateField}></lightning-output-field>
+        <lightning-output-field field-name={fields.zipCodeField}></lightning-output-field>
+        <lightning-output-field field-name={fields.hasAvailableUnitsField}></lightning-output-field>
+        <lightning-output-field field-name={fields.maintenanceFeesField}></lightning-output-field>
+        <lightning-output-field field-name={fields.petsAllowedField}></lightning-output-field>
+        <lightning-output-field field-name={fields.totalUnitsField}></lightning-output-field>
     </lightning-record-view-form>
-<!--TODO: Add child component for available units (user story # 15)-->
+    <template lwc:if={property}>
+        <template for:each={property} for:item="prop">
+            <lightning-carousel key={prop.Id}>
+                <template for:each={prop.Images__r} for:item="image">
+                    <lightning-carousel-image key={image.Id}
+                        src={image.Url}
+                        alternative-text="Image of the {property.Name}"
+                        class="carousel-image"
+                        >
+                    </lightning-carousel-image>
+                </template>
+            </lightning-carousel>
+        </template>
+    </template>
+    <c-available-units-on-detail record-id={recordId}></c-available-units-on-detail>
 </template>
