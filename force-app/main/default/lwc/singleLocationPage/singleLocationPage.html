@@ -15,15 +15,16 @@
     </lightning-record-view-form>
     <template lwc:if={property}>
         <template for:each={property} for:item="prop">
-            <div key={prop.id}>
+            <lightning-carousel key={prop.Id}>
                 <template for:each={prop.Images__r} for:item="image">
-                    <div id={image.Id} key={image.Id} class="slds-carousel__panel" role="tabpanel" aria-hidden="true">
-                        <div class="slds-carousel__image">
-                            <img src={image.Url} alt="Image of the property."/>
-                        </div>
-                    </div>
+                    <lightning-carousel-image key={image.Id}
+                        src={image.Url}
+                        alternative-text="Image of the {prop.Name}"
+                        class="slds-size_1-of-2"
+                        >
+                    </lightning-carousel-image>
                 </template>
-            </div>
+            </lightning-carousel>
         </template>
     </template>
     <c-available-units-on-detail record-id={recordId}></c-available-units-on-detail>
