@@ -1,14 +1,13 @@
-.sidebar-second{ 
-    width: 40vw;
+.sidebar-second{   
+    width: 30%;
+    /* order: 1; */
     color: var(--secondary-color); 
     background: #ebecee;
-    background: #002855;
+    /* flex-wrap: wrap; */
   }
 
   .main{
-    width: 100vw;
     background: var(--primary-color);
-  
   }
 
   @media(max-width: 780px){
