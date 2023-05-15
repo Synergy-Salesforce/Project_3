@@ -2,13 +2,13 @@
     <div class ="cardstyl">
     <lightning-card>
         
-        <div class="title"> {householddata.Property__r.Name}, {householddata.Unit__r.Name}</div>
-        <div class="txtdetail"> {householddata.Name}</div>
+        <div class="title"> {household.Property__r.Name}, {household.Unit__r.Name}</div>
+        <div class="txtdetail"> {household.Name}</div>
     
         <template if:true={showForm}>
     <lightning-record-edit-form
     class="lightform"
-    object-api-name={objectApiName}
+    object-api-name='House_Member__c'
     record-id={MemberId}
     onsubmit={handleSubmit}
 

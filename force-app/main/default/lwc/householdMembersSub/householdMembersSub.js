@@ -8,7 +8,7 @@ import TYPE from '@salesforce/schema/House_Member__c.Human_Type__c';
 import RELATION from '@salesforce/schema/House_Member__c.Relation__c';
 import CONTACT from '@salesforce/schema/House_Member__c.Contact__c';
 import RECORDTYPE from '@salesforce/schema/House_Member__c.RecordTypeId';
-import getHouseHoldMembersList from '@salesforce/apex/ProperHelper.getHouseHoldMembersList';
+import getHouseMembersList from '@salesforce/apex/ProperHelper.getHouseHoldMembersList';
 import { refreshApex } from '@salesforce/apex';
 import { deleteRecord } from 'lightning/uiRecordApi';
 
@@ -24,16 +24,13 @@ const columns = [
 
 export default class HouseholdMembersSub extends LightningElement {
 // set vars
-    @api recordid;
+
     @api recordId;
     @api MemberId
-    @api householddata;
-    @api objectApiName;
      showMsg = false;
-    
+    @api household;
     autoCloseTime = 1000;
-    @api ConId 
-    objectApiName ='House_Member__c'
+
     error;
     columns = columns;
     nameField = NAME_FIELD;
@@ -42,10 +39,9 @@ export default class HouseholdMembersSub extends LightningElement {
     @track selectedRecord;
     @track wiredAccountsResult = [];
     @track members= [];
-    error;
     @track showForm = true;
 // datalist set to resfreshable     
-    @wire(getHouseHoldMembersList)
+    @wire(getHouseMembersList,{recordId: '$recordId'})
     wiredAccounts(result) {
         this.wiredAccountsResult = result;
         if (result.data) {
@@ -57,12 +53,12 @@ export default class HouseholdMembersSub extends LightningElement {
         }
     }
 //set datalist data
-    connectedCallback(){
-        getHouseHoldMembersList({recordId: this.recordId})
-       .then((response) => {
-           this.members = response;
-       })
-   }
+//     connectedCallback(){
+//         getHouseMembersList({recordId: '$recordId'})
+//        .then((response) => {
+//            this.members = response;
+//        })
+//    }
 // custom save  
      handleSubmit(event) {
         event.preventDefault();

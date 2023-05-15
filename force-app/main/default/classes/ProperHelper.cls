@@ -42,7 +42,7 @@ public without sharing class ProperHelper {
           Property__r.Name,
           Unit__r.Name
         FROM Contact
-        WHERE Id = '0038b000030f4DsAAI' AND RecordType.Name IN ('Tenant')
+        WHERE Id = :recordId 
       ];
     }
 
@@ -56,7 +56,7 @@ public without sharing class ProperHelper {
           Relation__c,
           Contact__c
         FROM House_Member__c
-        WHERE Contact__c ='0038b000030f4DsAAI' AND RecordType.Name IN ('People')
+        WHERE Contact__c =:recordId AND RecordType.Name IN ('People')
       ];
     }
 

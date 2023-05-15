@@ -1,10 +1,11 @@
 <template>
     <div class="card">
+        <div>test</div>
     <template for:each={household.data} for:item="hhm">
         <c-household-members-sub
         key ={hhm.Id} 
-        householddata={hhm}
-        record-id={hhm.Id}
+        household={hhm}
+        record-id={recordId}
         >
         </c-household-members-sub>
     </template>
