@@ -1,0 +1,28 @@
+<template>
+   
+    <lightning-card>
+        <div class="title" >Add A New Pet Below!</div>
+        <lightning-record-edit-form class = "petlightform"
+        object-api-name={objectApiName}
+        onsubmit={onSubmitHandler} 
+        record-type-id={recordTypeId}
+    >
+    <lightning-input-field field-name={NAME}></lightning-input-field>
+    <lightning-input-field field-name={NUMBER_OF_PETS}></lightning-input-field>
+    <lightning-input-field field-name={PET_BREED}></lightning-input-field>
+    <lightning-input-field field-name={SIZE}></lightning-input-field>
+    <lightning-input-field field-name={PETOWNER}></lightning-input-field>
+    
+    <lightning-button variant="brand" type="submit" label="Submit">
+    </lightning-button>
+</lightning-record-edit-form>
+
+        <template if:true={showMsg}>
+        <div class = "ShowMsg">Thanks for adding a pet! You can see your new member {recordId} listed below!</div>
+      </template>
+</lightning-card>
+
+
+
+
+</template>
