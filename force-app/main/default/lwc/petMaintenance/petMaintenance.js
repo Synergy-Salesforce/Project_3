@@ -13,7 +13,7 @@ export default class PetMaintenance extends LightningElement {
     @track showMsg = false;
     autoCloseTime = 5000; 
     @api objectApiName;
-    @track recordTypeId;
+    
       
     
         NAME = "Name__c";
@@ -25,10 +25,14 @@ export default class PetMaintenance extends LightningElement {
         @wire(getObjectInfo, { objectApiName: HOUSE_MEMBER })
         objectInfo;
         get recordTypeId() {
+            if(this.objectInfo.data){
             // Returns a map of record type Ids 
             const rtis = this.objectInfo.data.recordTypeInfos;
             return Object.keys(rtis).find(rti => rtis[rti].name === 'Pets');
+        } else{
+            return null;
         }
+    }
 
     
     onSubmitHandler(event) {
