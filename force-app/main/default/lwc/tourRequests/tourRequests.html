@@ -1,10 +1,11 @@
 <template>
-    <lightning-record-form
-    object-api-name={objectApiName}
-    fields={fields}
-    onsuccess={handleSuccess}   
-    >
-</lightning-record-form>
-
-<!-- this should be a comment --> 
+    <lightning-card>
+        <h1 class="tour-title">Request a Tour!</h1>
+        <lightning-record-form
+        object-api-name={objectApiName}
+        fields={fields}
+        onsuccess={handleSuccess}   
+        >
+        </lightning-record-form>
+    </lightning-card>
 </template>
