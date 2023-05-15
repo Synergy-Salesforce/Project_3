@@ -29,28 +29,33 @@
 
 <template if:true={houseMember}>
     <template for:each={houseMember} for:item = "Member"> 
-        
-    <lightning-input
-    type="checkbox"
-    label="Show/Hide"
-    checked={showFields}
-    onchange={toggleFields}
-    key={Member.Id}
-></lightning-input>
+      
+      <lightning-input
+      type="checkbox"
+     label="Show/Hide"
+      checked={showFields}
+      onchange={toggleFields}
+      key={Member.id}></lightning-input>
+    
 
-        <div class="slds-grid slds-gutters" key={Member.Id}> 
+      <template if:true={showFields}>
+        <div class="slds-grid slds-gutters" key={Member.Id}>
             <div class="slds-col">
               <span><p> Pet Name: {Member.Name} </p></span>
             </div>
-
+          
+          
             <div class="slds-col">
               <span><p>Pet Size: {Member.Size__c}</p></span>
             </div>
-
+      
             <div class="slds-col">
-              <span>Pet Breed: {Member.Breed__c}</span>
+              <span><p>Pet Breed: {Member.Pet_Breeds__c}</p></span>
             </div>
+            
           </div>
+
+        </template>
     </template>
 </template>
 
@@ -58,7 +63,7 @@
 
 
 
-
+<!--Generate a record-edit-form that allows them to delete/update possible records by name-->
 
 
 
