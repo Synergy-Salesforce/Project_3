@@ -23,8 +23,48 @@
       </template>
 </lightning-card>
 
-<!-- place if:true directive on the form to see if user id is null for the form to conditionally render - likewise use the null navigation safe operator to avoid null pointer exception-->
+<!-- place if:true directive on the form to see if user id is null for the form to conditionally render - likewise use the null navigation safe operator to avoid null pointer exception -->
 
+
+
+  <div style="height: 300px;">
+      <lightning-datatable
+              key-field="id"
+              data={data}
+              columns={columns}
+              onrowaction={handleRowAction}>
+      </lightning-datatable>
+  </div>
+  <div class="slds-m-around--medium" style="width: 30rem;">
+      <article class="slds-tile">
+          <h3 class="slds-tile__title slds-truncate" title="Record details"><a href="javascript:void(0);">Record details</a></h3>
+          <div class="slds-tile__detail">
+              <dl class="slds-list_horizontal slds-wrap">
+                  <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Name">Name:</dt>
+                  <dd class="slds-item_detail slds-truncate">{record.name}</dd>
+                  <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Balance">Balance:</dt>
+                  <dd class="slds-item_detail slds-truncate">                    
+                  </dd>
+              </dl>
+          </div>
+      </article>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <lightning-card>
 
 <template if:true={houseMember}>
@@ -61,7 +101,7 @@
 
 </lightning-card>
 
-
+-->
 
 <!--Generate a record-edit-form that allows them to delete/update possible records by name-->
 
