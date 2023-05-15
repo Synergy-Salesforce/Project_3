@@ -1,3 +1,7 @@
+//David Melech
+// Project 3
+// household managment comp for people
+
 import { LightningElement,api,track,wire } from 'lwc';
 import NAME_FIELD from '@salesforce/schema/House_Member__c.Name';
 import TYPE from '@salesforce/schema/House_Member__c.Human_Type__c';
@@ -8,7 +12,7 @@ import getHouseHoldMembersList from '@salesforce/apex/ProperHelper.getHouseHoldM
 import { refreshApex } from '@salesforce/apex';
 import { deleteRecord } from 'lightning/uiRecordApi';
 
-
+//set fields for datalist
 const columns = [
    
     { label: 'Name', fieldName: 'Name',fixedWidth: 100 },
@@ -19,6 +23,7 @@ const columns = [
 
 
 export default class HouseholdMembersSub extends LightningElement {
+// set vars
     @api recordid;
     @api recordId;
     @api MemberId
@@ -39,6 +44,7 @@ export default class HouseholdMembersSub extends LightningElement {
     @track members= [];
     error;
     @track showForm = true;
+// datalist set to resfreshable     
     @wire(getHouseHoldMembersList)
     wiredAccounts(result) {
         this.wiredAccountsResult = result;
@@ -50,14 +56,14 @@ export default class HouseholdMembersSub extends LightningElement {
             this.members = undefined;
         }
     }
-    
+//set datalist data
     connectedCallback(){
         getHouseHoldMembersList({recordId: this.recordId})
        .then((response) => {
            this.members = response;
        })
    }
- 
+// custom save  
      handleSubmit(event) {
         event.preventDefault();
     const fields = event.detail.fields;
@@ -73,14 +79,14 @@ export default class HouseholdMembersSub extends LightningElement {
     
     } 
 
-         // in order to refresh your data, execute this function:
+//refresh data
      refreshData() {
         
         refreshApex(this.wiredAccountsResult);
         refreshApex(this.members);
      }
  
-    
+//reset record form data   
     handleReset(event) {
         const inputFields = this.template.querySelectorAll(
             'lightning-input-field'
@@ -95,19 +101,21 @@ export default class HouseholdMembersSub extends LightningElement {
         const editForm = this.template.querySelector('lightning-record-edit-form');
             editForm.recordId = null;
      }
+
+// show success msg
      showsuccess(e){
         this.showMsg = false
         this.refreshData();
         
      }
-
+// set record from record to selected from datalist
      handelSelection(event) {
         if (event.detail.selectedRows.length > 0) {
           this.selectedRecord = event.detail.selectedRows[0].Id;
         }
         this.MemberId = this.selectedRecord;
       }
-
+// delete record from record
       deleteRecord() {
         deleteRecord(this.selectedRecord)
           .then(() => {
