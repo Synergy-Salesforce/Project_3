@@ -44,11 +44,15 @@
     <tabs>House_Member__c</tabs>
     <tabs>Vacancy_Notice__c</tabs>
     <tabs>Payment_Due__c</tabs>
+    <tabs>Household_People__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>LightningSalesConsole_UtilityBar</utilityBar>
     <workspaceConfig>
         <mappings>
             <tab>House_Member__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Household_People__c</tab>
         </mappings>
         <mappings>
             <tab>Payment_Due__c</tab>

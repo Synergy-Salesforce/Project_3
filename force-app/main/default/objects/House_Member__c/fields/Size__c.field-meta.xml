@@ -12,14 +12,14 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Large,</fullName>
+                <fullName>Large</fullName>
                 <default>false</default>
-                <label>Large,</label>
+                <label>Large</label>
             </value>
             <value>
-                <fullName>Small,</fullName>
+                <fullName>Small</fullName>
                 <default>false</default>
-                <label>Small,</label>
+                <label>Small</label>
             </value>
             <value>
                 <fullName>Medium</fullName>

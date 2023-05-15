@@ -21,6 +21,11 @@
                 <default>false</default>
                 <label>Friend</label>
             </value>
+            <value>
+                <fullName>Visitor</fullName>
+                <default>false</default>
+                <label>Visitor</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

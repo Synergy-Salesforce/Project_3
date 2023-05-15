@@ -18,6 +18,24 @@
         <type>Flexipage</type>
         <pageOrSobjectType>Tour__c</pageOrSobjectType>
     </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>House_Member_Record_Page1</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>House_Member__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>House_Member_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>House_Member__c</pageOrSobjectType>
+    </actionOverrides>
     <brand>
         <headerColor>#0070D2</headerColor>
         <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
@@ -40,6 +58,7 @@
     <tabs>House_Member__c</tabs>
     <tabs>Vacancy_Notice__c</tabs>
     <tabs>Payment_Due__c</tabs>
+    <tabs>Household_People__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Property_Managment_UtilityBar</utilityBar>
 </CustomApplication>

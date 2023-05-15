@@ -2,8 +2,8 @@
     <div class ="cardstyl">
     <lightning-card>
         
-        <div class="title"> {household.Property__r.Name}, {household.Unit__r.Name}</div>
-        <div class="txtdetail"> {household.Name}</div>
+        <div class="title">Household Members</div>
+        <div class="txtdetail"> {household.Property__r.Name}, {household.Unit__r.Name}</div>
     
         <template if:true={showForm}>
     <lightning-record-edit-form

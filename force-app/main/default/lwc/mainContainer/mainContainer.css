@@ -10,10 +10,6 @@
 
 .logo {
     border: 3px solid black;
-    min-width: 40vw;
-    max-width: 50vw;
-    height: auto;
-    aspect-ratio: 411/235;
 }
 
 .main-content{
@@ -46,9 +42,7 @@
 .ham-menu {
   display: none;
 }
-.appform{
-  width: 60vw;
-}
+
 @media(max-width:780px) {
   .ham-menu {
     display: block;

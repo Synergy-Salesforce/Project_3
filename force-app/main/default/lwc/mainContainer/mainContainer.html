@@ -17,17 +17,25 @@
                 <li class="nav-item">
                   <a class="nav-link" onclick={handleLocationsClick}>Locations</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" onclick={handleApplicationClick}>Apply</a>
-                </li>
-                <li class="nav-item">
                   <template lwc:if={isLoggedIn}>
-                    <a class="nav-link" href={logoutUrl}>Logout</a>
+                    <li class="nav-item">
+                      <a class="nav-link" onclick={handleMaintenanceClick}>Request Maintenance</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" onclick={handleHouseholdClick}>Manage Household</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href={logoutUrl}>Logout</a>
+                    </li>
                   </template>
                   <template lwc:else>
+                    <li class="nav-item">
+                      <a class="nav-link" onclick={handleApplicationClick}>Apply</a>
+                    </li>
+                    <li class="nav-item">
                       <a class="nav-link" href="/vforcesite/login">Login or Register</a>
+                    </li>
                   </template>
-                </li>
               </ul>
               
             </div>
@@ -35,19 +43,21 @@
 
         <div class="main-content">
             <template lwc:if={homePage}>
-                
-                <c-home-page show-all-locations={showAllLocations}></c-home-page>
+              <c-home-page show-all-locations={showAllLocations}></c-home-page>
             </template>
             <template lwc:elseif={locationPage}>
-                <template lwc:if={recordId}>
-                    <c-single-location-page record-id={recordId}></c-single-location-page>
-                </template>
+              <template lwc:if={recordId}>
+                <c-single-location-page record-id={recordId}></c-single-location-page>
+              </template>
             </template>
-            <template lwc:elseif={applicationPage}>
-                <!--<h1>Application Form</h1>-->
-              <div class="appform">
-                <c-application-form></c-application-form>
-                </div>
+            <template lwc:elseif={applicationPage}>              
+              <c-application-form></c-application-form>
+            </template>
+            <template lwc:elseif={maintenancePage}>
+              <c-maintenance-page user-id={userId}></c-maintenance-page>
+            </template>
+            <template lwc:elseif={householdPage}>
+              <c-manage-household-page user-id={userId}></c-manage-household-page>
             </template>
         </div>
     </div>

@@ -13,5 +13,6 @@
     <tabs>House_Member__c</tabs>
     <tabs>Vacancy_Notice__c</tabs>
     <tabs>Payment_Due__c</tabs>
+    <tabs>Household_People__c</tabs>
     <uiType>Lightning</uiType>
 </CustomApplication>

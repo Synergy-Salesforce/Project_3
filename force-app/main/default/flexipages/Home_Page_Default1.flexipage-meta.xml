@@ -3,8 +3,8 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>locationsMain</componentName>
-                <identifier>c_locationsMain</identifier>
+                <componentName>householdMembersMain</componentName>
+                <identifier>c_householdMembersMain</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>

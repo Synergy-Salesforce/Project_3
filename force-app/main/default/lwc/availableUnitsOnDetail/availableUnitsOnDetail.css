@@ -1,6 +1,5 @@
 .unitText{
     color:#002855;
-    font-size: 1vw;
 }
 .backgroundColor{
     background-color: #002855;
@@ -10,12 +9,4 @@
 .h1Title{
     color: #EAAA00;
     text-align: center;
-}
-
-@media(max-width: 780px){
-    .unitText{
-        color:#002855;
-        font-size: 2vw;
-    }
-
 }

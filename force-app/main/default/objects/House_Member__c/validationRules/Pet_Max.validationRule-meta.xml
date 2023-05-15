@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pet_Max</fullName>
+    <active>true</active>
+    <description>No more than two pets</description>
+    <errorConditionFormula>Number_of_Pets__c &gt; 2</errorConditionFormula>
+    <errorDisplayField>Number_of_Pets__c</errorDisplayField>
+    <errorMessage>Hello valued tenant! We love our cuddly companions - however the max here is two!</errorMessage>
+</ValidationRule>

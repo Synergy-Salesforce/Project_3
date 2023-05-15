@@ -60,4 +60,14 @@ public without sharing class ProperHelper {
       ];
     }
 
+    @AuraEnabled(Cacheable=true)
+    public static String getConId(String userId){
+      List<User> conidlist =  [SELECT ContactId FROM User WHERE Id=:userId LIMIT 1];
+      String returnid;
+      for(User conid: conidlist){
+       returnid = conid.ContactId;
+      }
+      return returnid;
+    }
+
 }

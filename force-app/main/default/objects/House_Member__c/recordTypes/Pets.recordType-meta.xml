@@ -141,11 +141,15 @@
             <fullName>Friend</fullName>
             <default>false</default>
         </values>
+        <values>
+            <fullName>Visitor</fullName>
+            <default>false</default>
+        </values>
     </picklistValues>
     <picklistValues>
         <picklist>Size__c</picklist>
         <values>
-            <fullName>Large%2C</fullName>
+            <fullName>Large</fullName>
             <default>false</default>
         </values>
         <values>
@@ -153,7 +157,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Small%2C</fullName>
+            <fullName>Small</fullName>
             <default>false</default>
         </values>
     </picklistValues>

@@ -30,7 +30,7 @@ export default class HouseholdMembersSub extends LightningElement {
      showMsg = false;
     @api household;
     autoCloseTime = 1000;
-
+    @api conId;
     error;
     columns = columns;
     nameField = NAME_FIELD;
@@ -41,7 +41,7 @@ export default class HouseholdMembersSub extends LightningElement {
     @track members= [];
     @track showForm = true;
 // datalist set to resfreshable     
-    @wire(getHouseMembersList,{recordId: '$recordId'})
+    @wire(getHouseMembersList,{recordId: '$conId'})
     wiredAccounts(result) {
         this.wiredAccountsResult = result;
         if (result.data) {
@@ -63,7 +63,7 @@ export default class HouseholdMembersSub extends LightningElement {
      handleSubmit(event) {
         event.preventDefault();
     const fields = event.detail.fields;
-    fields.Contact__c = this.recordId
+    fields.Contact__c = this.conId;
     fields.	RecordTypeId ='0128b000000dNzpAAE'
     this.template.querySelector('.lightform').submit(fields);
     this.handleReset();

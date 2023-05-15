@@ -2,7 +2,8 @@
   CHRISTOPHER BOAMAH MENSAH
   REVATURE LLC
 */
-import { LightningElement, api } from 'lwc';
+import { LightningElement } from 'lwc';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import APPLICATION_OBJECT from '@salesforce/schema/Application__c'; 
 import FIRSTNAME_FIELD from '@salesforce/schema/Application__c.First_Name__c';
 import LASTNAME_FIELD from '@salesforce/schema/Application__c.Last_Name__c';
@@ -13,64 +14,26 @@ import PROPERTY_FIELD from '@salesforce/schema/Application__c.Property__c';
 import UNIT_FIELD from '@salesforce/schema/Application__c.Unit__c';
 
 export default class ApplicationForm extends LightningElement {
-  objectApiName = "Application__c";
+  objectApiName = APPLICATION_OBJECT;
+  fields = [FIRSTNAME_FIELD, LASTNAME_FIELD, MOBILE_FIELD, EMAIL_FIELD, MOVEINDATE_FIELD, PROPERTY_FIELD, UNIT_FIELD];
 
-  showMsg = false;
-  autoCloseTime = 5000;
+  handleSuccess() {
+    const susccessToastEvent = new ShowToastEvent({
+      title: "Success",
+      message: "Your application was submitted",
+      variant: "success"
+    });
 
-  @api
-  recordId;
-
-  FIRSTNAME = "First_Name__c";
-  LASTNAME = "Last_Name__c";
-  MOBILE = "Mobile__c";
-  EMAIL = "Email__c";
-  MOVEINDATE = "Move_In_Date__c";
-  PROPERTY = "Property__c";
-  UNIT = "Unit__c";
-
-  handleSubmit(event) {
-    event.preventDefault();
-    const fields = event.detail.fields;
-    this.template.querySelector('.lightform').submit(fields);
-    this.handleReset()
-    this.showMsg = true
-    setTimeout(() => {
-      this.showsuccess();
-    }, this.autoCloseTime);
+    this.dispatchEvent(susccessToastEvent);
+    const editForm = this.template.querySelector('lightning-record-form');
+    editForm.recordId = null; 
   }
 
-  handleReset() {
-    const inputFields = this.template.querySelectorAll(
-      'lightning-input-field'
-    );
-    if (inputFields) {
-      inputFields.forEach(field => {
-        field.reset();  
-      });
-    }
+  handleCancel() {
+    const cancelToastEvent = new ShowToastEvent({
+      title: "Failure",
+      message: "Your application was not submitted. Please contact support.",
+      variant: "error"
+    });
   }
-
-  showsuccess() {
-    this.showMsg = false;
-  }
-  // handleSuccess() {
-  //   const susccessToastEvent = new ShowToastEvent({
-  //     title: "Success",
-  //     message: "Your application was submitted",
-  //     variant: "success"
-  //   });
-
-  //   this.dispatchEvent(susccessToastEvent);
-  //   const editForm = this.template.querySelector('lightning-record-form');
-  //   editForm.recordId = null; 
-  // }
-
-  // handleCancel() {
-  //   const cancelToastEvent = new ShowToastEvent({
-  //     title: "Failure",
-  //     message: "Your application was not submitted. Please contact support.",
-  //     variant: "error"
-  //   });
-  // }
 }
