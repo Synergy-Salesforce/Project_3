@@ -125,6 +125,3 @@ export default class HouseholdMembersSub extends LightningElement {
       }
 
 }
-
-    
-
