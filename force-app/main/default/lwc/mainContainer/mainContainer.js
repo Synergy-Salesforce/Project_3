@@ -4,14 +4,18 @@ import MainChannel from '@salesforce/messageChannel/mainChannel__c';
 import LOGO_URL from '@salesforce/resourceUrl/Logo';
 import HAM_ICON from '@salesforce/resourceUrl/rows';
 import IS_GUEST from '@salesforce/user/isGuest';
+import USER_ID from '@salesforce/user/Id';
 import { NavigationMixin } from 'lightning/navigation';
 
 
 export default class MainContainer extends LightningElement {
+    userId = USER_ID;
     hamIcon = HAM_ICON;
     homePage = true;
     locationPage;
     applicationPage;
+    maintenancePage;
+    householdPage;
     showAllLocations = false;
 
     isLoggedIn = !IS_GUEST;
@@ -30,6 +34,8 @@ export default class MainContainer extends LightningElement {
         this.homePage = false;
         this.locationPage = false;
         this.applicationPage = false;
+        this.maintenancePage = false;
+        this.householdPage = false;
     }
 
     updatePageMethod(updater){
@@ -42,6 +48,12 @@ export default class MainContainer extends LightningElement {
                 break;
             case 'applicationPage':
                 this.applicationPage = true;
+                break;
+            case 'maintenancePage':
+                this.maintenancePage = true;
+                break;
+            case 'householdPage':
+                this.householdPage = true;
                 break;
             default:
                 this.homePage = true;
@@ -96,5 +108,13 @@ export default class MainContainer extends LightningElement {
       this.updatePageMethod('homePage');
       this.showAllLocations = false;
       this.recordId = null;
+    }
+
+    handleMaintenanceClick(){
+        this.updatePageMethod('maintenancePage');
+    }
+
+    handleHouseholdClick(){
+        this.updatePageMethod('householdPage');
     }
 }

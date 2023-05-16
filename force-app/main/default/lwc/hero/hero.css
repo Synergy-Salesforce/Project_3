@@ -1,6 +1,6 @@
 @import 'c/sharedCss';
 
-@media screen (max-width: 600px) {
+@media(max-width: 600px) {
     .hero-small{
         font-size: 30vw;
     }
