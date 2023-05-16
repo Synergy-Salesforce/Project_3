@@ -64,7 +64,7 @@ export default class HouseholdMembersSub extends LightningElement {
         event.preventDefault();
     const fields = event.detail.fields;
     fields.Contact__c = this.conId;
-    fields.	RecordTypeId ='0128b000000dNzpAAE'
+    fields.	RecordTypeId ='0128b000000dNzpAAE';
     this.template.querySelector('.lightform').submit(fields);
     this.handleReset();
     this.showMsg = true
