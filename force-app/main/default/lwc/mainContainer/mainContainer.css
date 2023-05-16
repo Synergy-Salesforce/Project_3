@@ -5,12 +5,11 @@
     color: white;
     padding: 20px;
     margin: 0;
-    min-height: 200px;
 }
 
 .logo {
     border: 3px solid black;
-    min-width: 40vw;
+    height: 82px;
 }
 
 .main-content{

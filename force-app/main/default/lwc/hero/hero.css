@@ -2,15 +2,14 @@
 
 @media screen (max-width: 600px) {
     .hero-small{
-        font-size: 40vw;
+        font-size: 30vw;
     }
 }
 
 .hero{
-    background-color: var(--primary-color);
-    color: #EAAA00; 
+    color: var(--primary-color); 
     text-align: center;
-    font-size: 60px;
+    font-size: 40px;
 }
 
 .card{

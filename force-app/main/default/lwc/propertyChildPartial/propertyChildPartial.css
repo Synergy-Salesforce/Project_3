@@ -1,15 +1,14 @@
 .container {
     
-    align-self: center;
-    align-items: normal;
+    
+    align-items: center;
     border-radius: 5px;
     color: #EAAA00;
     margin:5px;
     display: flex;
-    align-items: normal;
     background-color: #002855;
-    flex-direction: column;
-    flex-wrap: nowrap;
+    flex-direction: row;
+    flex-wrap: wrap;
     
 }
 .title {
@@ -18,29 +17,20 @@
     color: #EAAA00;
 }
 .card{
-    display: flex;
-    flex-flow: row wrap;
-    position: relative;
-    align-self: normal;
-    align-items: normal;
+    align-items: center;
     width: 95%;
-    align-items:normal;
-    flex-direction: row;
     color: #002855;
-    margin:5px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
-    justify-content: space-between;
     border: #002855;
 }
 
 .propName{
     /* font-size: 5vw; */
-    font-size: 10px;
+    font-size: 3vw;
 }
 
 .itemDetail{
     /* font-size: 3vw; */
-    font-size: 5px;
+    font-size: 1vw;
 }
 
 .item{

@@ -12,7 +12,7 @@
   .main{
     /* flex: 1; */
     /* order: 0; */
-    background: var(--primary-color);
+    background: white;
     /* flex-wrap: wrap; */
   }
 
