@@ -1,5 +1,13 @@
+@import 'c/sharedCss';
+h2 {
+  text-align: center;
+  font-size: 2em;
+  color: var(--primary-color);
+}
+
 .sidebar-second{   
     width: 30%;
+    margin: 3px;
     /* order: 1; */
     color: var(--secondary-color); 
     background: white;
@@ -17,7 +25,6 @@
     .flex-content3 {
       display: flex;
       flex-direction: column;
-      background: var(--primary-color);
       color: var(--secondary-color); 
       align-self: center;
       align-items: center;
@@ -28,11 +35,9 @@
       align-self: center;
       color: var(--secondary-color); 
       background: #ebecee;
-      background: #002855;
     }
     .main{
       width: 90vw;
-      background: var(--primary-color);
       align-self: center;
       align-items: center;
     }
@@ -40,6 +45,5 @@
 
   .flex-content3 {
     display: flex;
-    background: var(--primary-color);
     color: var(--secondary-color); 
   }

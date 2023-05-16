@@ -1,16 +1,21 @@
 @import 'c/sharedCss';
 
-@media(max-width: 600px) {
-    .hero-small{
-        font-size: 30vw;
+@media(min-width: 600px) {
+    .hero{
+        color: var(--primary-color); 
+        text-align: center;
+        font-size: 40px;
     }
 }
 
-.hero{
-    color: var(--primary-color); 
-    text-align: center;
-    font-size: 40px;
+@media(max-width: 600px) {
+    .hero{
+        color: var(--primary-color); 
+        text-align: center;
+        font-size: 30px;
+    }
 }
+
 
 .card{
     background-color: var(--primary-color);
