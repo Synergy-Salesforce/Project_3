@@ -1,4 +1,4 @@
-public with sharing class unitController {
+public without sharing class unitController {
   @AuraEnabled(Cacheable=true)
   public static list<unit__c> getUnitList(String recordId) {
     return [
