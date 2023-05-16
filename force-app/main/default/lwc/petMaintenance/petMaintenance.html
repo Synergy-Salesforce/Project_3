@@ -3,16 +3,18 @@
     <lightning-card>
         <div class="title" >Add A New Pet Below!</div>
         <lightning-record-edit-form class = "petlightform"
-        object-api-name={objectApiName}
+        object-api-name='House_Member__c'
         onsubmit={onSubmitHandler} 
         record-type-id={rtis}
     >
     <lightning-input-field field-name={NAME}></lightning-input-field>
+    <div class="slds-grid">
+    
     <lightning-input-field field-name={RELATION}></lightning-input-field>
     <lightning-input-field field-name={NUMBER_OF_PETS}></lightning-input-field>
-    <lightning-input-field field-name={PET_BREED}></lightning-input-field>
     <lightning-input-field field-name={SIZE}></lightning-input-field>
-  
+    </div>
+    <lightning-input-field field-name={PET_BREED}></lightning-input-field>
     
     <lightning-button variant="brand" type="submit" label="Submit">
     </lightning-button>
@@ -26,86 +28,16 @@
 <!-- place if:true directive on the form to see if user id is null for the form to conditionally render - likewise use the null navigation safe operator to avoid null pointer exception -->
 
 
-
-  <div style="height: 300px;">
+  <lightning-card>
+  <div>
       <lightning-datatable
               key-field="id"
-              data={houseMemberss.data}
+              data={houseMember.data}
               columns={columns}
-              onrowaction={handleRowAction}>
+              onrowaction={handleRowAction}
+              max-row-selection="1">
       </lightning-datatable>
   </div>
-  <div class="slds-m-around--medium" style="width: 30rem;">
-      <article class="slds-tile">
-          <h3 class="slds-tile__title slds-truncate" title="Record details"><a href="javascript:void(0);">Record details</a></h3>
-          <div class="slds-tile__detail">
-              <dl class="slds-list_horizontal slds-wrap">
-                  <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Name">Name:</dt>
-                  <dd class="slds-item_detail slds-truncate">{record.name}</dd>
-                  <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Balance">Balance:</dt>
-                  <dd class="slds-item_detail slds-truncate">                    
-                  </dd>
-              </dl>
-          </div>
-      </article>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-<lightning-card>
-
-<template if:true={houseMember}>
-    <template for:each={houseMember} for:item = "Member"> 
-      
-      <lightning-input
-      type="checkbox"
-     label="Show/Hide"
-      checked={showFields}
-      onchange={toggleFields}
-      key={Member.id}></lightning-input>
-    
-
-      <template if:true={showFields}>
-        <div class="slds-grid slds-gutters" key={Member.Id}>
-            <div class="slds-col">
-              <span><p> Pet Name: {Member.Name} </p></span>
-            </div>
-          
-          
-            <div class="slds-col">
-              <span><p>Pet Size: {Member.Size__c}</p></span>
-            </div>
-      
-            <div class="slds-col">
-              <span><p>Pet Breed: {Member.Pet_Breeds__c}</p></span>
-            </div>
-            
-          </div>
-
-        </template>
-    </template>
-</template>
-
 </lightning-card>
-
--->
-
-<!--Generate a record-edit-form that allows them to delete/update possible records by name-->
-
-
-
 
 </template>

@@ -1,5 +1,6 @@
 <template>
-    <lightning-card>
+    <div class="card">
+    
         <div class="title" >Request a Tour!</div>
         <lightning-record-edit-form class = "lightform"
         object-api-name={objectApiName}
@@ -7,18 +8,23 @@
         recordid={recordId}
         >
 
-
-    <lightning-input-field field-name={NAME}></lightning-input-field>
-    <lightning-input-field field-name={EMAIL}></lightning-input-field>
-    <lightning-input-field field-name={PHONE}></lightning-input-field>
-    <lightning-input-field field-name={PROPERTY}></lightning-input-field>
-    <lightning-input-field field-name={AVAILABLE_DATE}></lightning-input-field>
+    Name:
+    <lightning-input-field variant="label-hidden" field-name={NAME}></lightning-input-field>
+    Email:
+    <lightning-input-field variant="label-hidden" field-name={EMAIL}></lightning-input-field>
+    Phone:
+    <lightning-input-field variant="label-hidden" field-name={PHONE}></lightning-input-field>
+    Property:
+    <lightning-input-field variant="label-hidden" field-name={PROPERTY}></lightning-input-field>
+    Date Available:
+    <lightning-input-field variant="label-hidden" field-name={AVAILABLE_DATE}></lightning-input-field>
    <lightning-button variant="brand" type="submit" label="Submit">
     </lightning-button>
     </lightning-record-edit-form>
     <template if:true={showMsg}>
     <div class="showMsg">Thank you for scheduling a tour.</div>
     </template>
-    </lightning-card>
+    
+    </div>
 <!-- this should be a comment --> 
 </template>
