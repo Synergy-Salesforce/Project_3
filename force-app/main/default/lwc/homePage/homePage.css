@@ -3,11 +3,9 @@
     width: 30%;
     /* order: 1; */
     color: var(--secondary-color); 
-    background: #ebecee;
+    background: white;
     /* flex-wrap: wrap; */
-    
-    background: #002855;
-  }
+    }
 
   .main{
     /* flex: 1; */
