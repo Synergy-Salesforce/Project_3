@@ -8,11 +8,13 @@
         record-type-id={rtis}
     >
     <lightning-input-field field-name={NAME}></lightning-input-field>
+    <div class="slds-grid">
+    
     <lightning-input-field field-name={RELATION}></lightning-input-field>
     <lightning-input-field field-name={NUMBER_OF_PETS}></lightning-input-field>
-    <lightning-input-field field-name={PET_BREED}></lightning-input-field>
     <lightning-input-field field-name={SIZE}></lightning-input-field>
-  
+    </div>
+    <lightning-input-field field-name={PET_BREED}></lightning-input-field>
     
     <lightning-button variant="brand" type="submit" label="Submit">
     </lightning-button>
@@ -27,12 +29,13 @@
 
 
   <lightning-card>
-  <div style="height: 300px;">
+  <div>
       <lightning-datatable
               key-field="id"
               data={houseMember.data}
               columns={columns}
-              onrowaction={handleRowAction}>
+              onrowaction={handleRowAction}
+              max-row-selection="1">
       </lightning-datatable>
   </div>
 </lightning-card>

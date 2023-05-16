@@ -9,6 +9,10 @@ import NUMBER_OF_PETS from '@salesforce/schema/House_Member__c.Number_of_Pets__c
 import PET_BREED from '@salesforce/schema/House_Member__c.Pet_Breeds__c';
 import SIZE from '@salesforce/schema/House_Member__c.Size__c';
 import RELATION from '@salesforce/schema/House_Member__c.Relation__c';
+import USER_ID from '@salesforce/user/Id';
+import CONTACT from '@salesforce/schema/House_Member__c.Contact__c';
+import getCONID from '@salesforce/apex/ProperHelper.getConId';
+
 
 
 const actions = [
@@ -31,10 +35,10 @@ export default class PetMaintenance extends LightningElement {
 
 
     @track showMsg = false;
-    autoCloseTime = 5000; 
+    autoCloseTime = 1000; 
     @api objectApiName;
     @track rtis;  
-    
+    @api conId;
 
     columns = columns;
     NAME = "Name";
@@ -51,10 +55,17 @@ export default class PetMaintenance extends LightningElement {
             }
         }
 
+        connectedCallback() {
+            getCONID({ userId: USER_ID })
+            .then(res => {
+                this.conId = res;
+            })
+        }
     
-    onSubmitHandler(event) {
+        onSubmitHandler(event) {
         event.preventDefault();
        const fields = event.detail.fields;
+       fields.Contact__c = this.conId;
        this.template.querySelector('.petlightform').submit(fields);
        this.handleReset();
        this.showMsg = true;
@@ -71,8 +82,11 @@ export default class PetMaintenance extends LightningElement {
    })}
        }
    
+
+
        showSuccess(e){
            this.showMsg = false
+           this.refreshData();
         }
        
 
@@ -92,13 +106,8 @@ export default class PetMaintenance extends LightningElement {
         }
       );
     }
-
+    refreshData() {
+        refreshApex(this.houseMember);
+     }
     
 }
-
-
-
-
-
-
-
