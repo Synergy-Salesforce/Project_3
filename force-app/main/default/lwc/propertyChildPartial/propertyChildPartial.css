@@ -3,12 +3,13 @@
     
     align-items: center;
     border-radius: 5px;
-    color: #EAAA00;
+    color: #002855;
     margin:5px;
-    display: flex;
-    background-color: #002855;
+    padding: 3px;
+    background-color:#002855 ;
     flex-direction: row;
     flex-wrap: wrap;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.6);
     
 }
 .title {
@@ -19,8 +20,9 @@
 .card{
     align-items: center;
     width: 95%;
-    color: #002855;
+    color: white;
     border: #002855;
+    background-color: #002855;
 }
 
 .propName{
@@ -30,7 +32,7 @@
 
 .itemDetail{
     /* font-size: 3vw; */
-    font-size: 1vw;
+    font-size: 2vw;
 }
 
 .item{

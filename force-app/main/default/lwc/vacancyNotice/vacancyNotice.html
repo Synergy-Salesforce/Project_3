@@ -1,20 +1,26 @@
 <template>
     <div class="vacate">
-    <lightning-record-edit-form object-api-name="Vacancy_Notice__c" >
+    <lightning-record-edit-form object-api-name="Vacancy_Notice__c" onsubmit={handleSubmit} class='lightform'>
         <!--<lightning-input-field field-name={nameField}></lightning-input-field>-->
+        <!--
         <template lwc:if={contact}>
             Unit and Person to be Vacated
-            <lightning-input-field value={contact.Name} disabled='true' field-name="Unit__c"></lightning-input-field>
+            <lightning-input-field value={contact.Name} disabled='true' field-name="Contact__c"></lightning-input-field>
+            <lightning-input-field value={contact.Unit__c} disabled='true' field-name="Unit__c"></lightning-input-field>
             <lightning-input-field value={contact.Property__c} disabled='true' field-name="Property__c"></lightning-input-field>
-            <lightning-input-field value={contact.Unit__c} disabled='true' field-name="Contact__c"></lightning-input-field>
+            
         </template>
         <template lwc:else> 
             The Current User does not have an associated tenant contact, if this is incorrect, please contact management
         </template>
-        Vacancy Information <br>
+    -->
+        Notice of Intention to Vacate <br>
+
+        
         Date:
         <lightning-input-field field-name='Date_of_Vacancy__c' variant="label-hidden"></lightning-input-field>
-        <lightning-input-rich-text field-name='Reason_Long__c'></lightning-input-rich-text>
+        Reason:
+        <lightning-input-field field-name='Reason__c' variant="label-hidden"></lightning-input-field>
 
         <lightning-button
             class="buttonn"

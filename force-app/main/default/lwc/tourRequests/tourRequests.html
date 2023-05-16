@@ -1,11 +1,30 @@
 <template>
-    <lightning-card>
-        <h1 class="tour-title">Request a Tour!</h1>
-        <lightning-record-form
+    <div class="card">
+    
+        <div class="title" >Request a Tour!</div>
+        <lightning-record-edit-form class = "lightform"
         object-api-name={objectApiName}
-        fields={fields}
-        onsuccess={handleSuccess}   
+        onsubmit={onSubmitHandler}
+        recordid={recordId}
         >
-        </lightning-record-form>
-    </lightning-card>
+
+    Name:
+    <lightning-input-field variant="label-hidden" field-name={NAME}></lightning-input-field>
+    Email:
+    <lightning-input-field variant="label-hidden" field-name={EMAIL}></lightning-input-field>
+    Phone:
+    <lightning-input-field variant="label-hidden" field-name={PHONE}></lightning-input-field>
+    Property:
+    <lightning-input-field variant="label-hidden" field-name={PROPERTY}></lightning-input-field>
+    Date Available:
+    <lightning-input-field variant="label-hidden" field-name={AVAILABLE_DATE}></lightning-input-field>
+   <lightning-button variant="brand" type="submit" label="Submit">
+    </lightning-button>
+    </lightning-record-edit-form>
+    <template if:true={showMsg}>
+    <div class="showMsg">Thank you for scheduling a tour.</div>
+    </template>
+    
+    </div>
+<!-- this should be a comment --> 
 </template>

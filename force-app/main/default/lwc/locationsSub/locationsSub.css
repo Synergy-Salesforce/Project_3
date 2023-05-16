@@ -1,25 +1,49 @@
+@import 'c/sharedCss';
+
 .product-img {
-    max-width: 100%;
+    max-height: 100%;
+    margin:5px 0 10px 0;
+    padding: 3px;
+    align-self: center;
     
 }
 
 .title {
-    font-size: large;
+    font-size:2vw;
     font-style: Bold;
-    color: #002855;
-}
-.des{
-    font-size: 12px;
-    color: #002855;
-}
-.container {
-    border: 3px #EAAA00 solid;
-    border-radius: 5px;
-    color: #002855;
-    margin:5px;
-    padding: 3px;
-    max-width: 400px;
-    min-height: 300px;
-    display: flex;
+    color: var(--primary-color);
+    margin:10px;
+    flex-wrap: nowrap;
     
 }
+
+.card{
+    display: flex;
+    flex-direction: column;
+    border-color: #002855;
+    max-height: 2%;
+    
+}
+
+.des{
+    font-size: 1vw;
+    color: var(--primary-color);
+    margin-left:10px;
+}
+.container {
+    border: 3px var(--primary-color) solid;
+    max-width: 100%;
+    max-height: 2%;
+    border-radius: 5px;
+    color: #002855;
+    margin:10px;
+    padding: 3px;
+    align-self: normal;
+    display: flex;
+    align-items: normal;
+    flex-direction:row;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.6);
+}
+.container :first-child {
+    max-width: 20vw;
+  }
