@@ -2,7 +2,7 @@ public with sharing class vehicleController {
     
     @AuraEnabled(Cacheable=true)
     public static List<House_Member__c> getVehicle(String userId){
-        List<User> userRecord = [SELECT Contact.Id FROM User WHERE Id= '0058b00000GdD7OAAV' LIMIT 1];
+        List<User> userRecord = [SELECT Contact.Id FROM User WHERE Id=: userId LIMIT 1];
         String contactId;
         
         for (User us : userRecord) {
@@ -27,7 +27,7 @@ public with sharing class vehicleController {
 
     @AuraEnabled(Cacheable=true)
     public static String getContactId(String userId){
-      List<User> userRecord = [SELECT ContactId FROM User WHERE Id= '0058b00000GdD7OAAV' LIMIT 1];
+      List<User> userRecord = [SELECT ContactId FROM User WHERE Id=: userId LIMIT 1];
       String contactIdPassing;
         
       for (User us : userRecord) {
