@@ -34,6 +34,8 @@ export default class PetMaintenance extends LightningElement {
     autoCloseTime = 5000; 
     @api objectApiName;
     @track rtis;  
+    
+
     columns = columns;
     NAME = "Name";
     NUMBER_OF_PETS = "Number_of_Pets__c";
