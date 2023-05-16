@@ -1,0 +1,21 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card title="Vehicle">
+        <p>version 14</p>
+        <lightning-record-edit-form class="lightform" record-id={MemberId} object-api-name="House_Member__c" record-type-id={recordTypeId}
+            onsubmit={handleSubmit}>
+            <label for={nameField}>License Plate Number</label>
+            <lightning-input-field variant="label-hidden" field-name={nameField}></lightning-input-field>
+            <div class="slds-grid">
+                <lightning-input-field field-name={modelField}></lightning-input-field>
+                <lightning-input-field field-name={makeField}></lightning-input-field>
+            </div>
+            <lightning-button type="submit" label="Submit" variant="brand"></lightning-button>
+            <lightning-button label="Delete" variant="brand" onclick={deleteRecord}></lightning-button>
+        </lightning-record-edit-form>
+        <template lwc:if={vehicleList}>
+            <lightning-datatable key-field="Id"  data={vehicleList} columns={columns} max-row-selection="1"
+                onrowselection={handleSelection}></lightning-datatable>
+        </template>
+    </lightning-card>
+</template>

@@ -2,27 +2,29 @@
 <template>
     <div class="backgroundColor">
         <div class="h1Title">Available Units</div>
-        <div class="slds-grid slds-gutters slds-wrap">
+        <div class="slds-grid slds-gutters_medium slds-wrap slds-grid_align-center">
             <template lwc:if={unitList}>
                 <template for:each={unitList} for:item="unit">
                     <lightning-card key={unit.Id}
-                        class=" slds-col slds-small-size_4-of-12 slds-grow-none slds-m-around_xx-small">
-                        <lightning-layout>
-                            <lightning-layout-item class="slds-border_bottom ">
-                                <div class="slds-m-top_small slds-grid slds-wrap">
-                                    <div class="slds-col slds-size_6-of-12">
-                                        <template for:each={unit.Images__r} for:item="img">
-                                            <img key={img.Id} src={img.Url}/>
-                                        </template>
+                        class=" slds-col slds-medium-size_2-of-8  slds-grow-none slds-m-horizontal_medium slds-m-vertical_small">
+                            <lightning-layout horizontal-align="center" vertical-align="stretch" >
+                                <lightning-layout-item  padding="around-small" flexibility="auto">
+                                        <div class="slds-col slds-size_8-of-12 slds-align_absolute-center">
+                                            <template for:each={unit.Images__r} for:item="img">
+                                                <img key={img.Id} src={img.Url} />
+                                            </template>
+                                        </div>
+                                        <div>
+                                            <div class="unitText slds-align_absolute-center">Unit Name: {unit.Name}</div>
+                                            <div class="unitText slds-align_absolute-center">Bedrooms: {unit.Bedrooms__c} Baths: {unit.Baths__c}
+                                            </div>
+                                            <div class="unitText slds-align_absolute-center">Rent: ${unit.Rent__c}
+                                            </div>
+                                            <div class="unitText slds-align_absolute-center">Unit-Size: {unit.Size_Sq_Ft__c}
+                                            </div>
                                     </div>
-                                    <div class="slds-col slds-size_4-of-12">
-                                        <div class="unitText">Unit Name: {unit.Name}</div>
-                                        <div class="unitText">Bedrooms: {unit.Bedrooms__c} Baths: {unit.Baths__c}</div>
-                                        <div class="unitText">Rent: ${unit.Rent__c} Unit-Size: {unit.Size_Sq_Ft__c}</div>
-                                    </div>
-                                </div>
-                            </lightning-layout-item>
-                        </lightning-layout>
+                                </lightning-layout-item>
+                            </lightning-layout>
                     </lightning-card>
                 </template>
             </template>
