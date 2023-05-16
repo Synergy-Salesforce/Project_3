@@ -3,5 +3,8 @@
     <br>
     User Id: {userId}
     <br>
-    Contact Id: {contactId.data}
+    <template lwc:if={leaseUrl.data}>
+        Lease Url: {leaseUrl.data}
+    </template>
+    <button onclick={showLeaseUrl}>Show Lease URL</button>
 </template>
