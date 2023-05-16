@@ -218,6 +218,12 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>vehicleComponent</componentName>
+                <identifier>c_vehicleComponent</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>tabs</name>
                     <value>sidebartabs</value>

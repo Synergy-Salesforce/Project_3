@@ -1,0 +1,15 @@
+@import 'c/sharedCss';
+
+.show-msg {
+  font-size: large;
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.custom-brand {
+  --sds-c-button-brand-color-background: var(--primary-color);
+}

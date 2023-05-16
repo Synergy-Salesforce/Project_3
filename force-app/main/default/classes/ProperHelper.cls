@@ -70,4 +70,28 @@ public without sharing class ProperHelper {
       return returnid;
     }
 
+    // @AuraEnabled(cacheable=true)
+    // public static string getLeaseFromContact(String contactId){
+    //     ContentDocumentLink contentVersionLatest = [SELECT Id, contentDocument.latestPublishedVersionId FROM ContentDocumentLink WHERE linkedEntityId=:contactId];
+    //     String contentVersionId = contentVersionLatest.ContentDocument.LatestPublishedVersionId;
+
+    //     ContentVersion lease = [SELECT versionDataUrl, fileType FROM ContentVersion WHERE id=:contentVersionId AND fileType='pdf'];
+    //     String leaseUrl = lease.versionDataUrl;
+    //     return leaseUrl;
+    // }
+
+    @AuraEnabled(cacheable=true)
+    public static string getLeaseFromContact2(String userId){
+        List<User> user =  [SELECT contactId FROM User WHERE Id=:userId];
+        // String contactId = user.Id;
+        String contactId = '0038b000030f4VhAAI';
+
+        ContentDocumentLink contentVersionLatest = [SELECT Id, contentDocument.latestPublishedVersionId FROM ContentDocumentLink WHERE linkedEntityId=:contactId];
+        String contentVersionId = contentVersionLatest.ContentDocument.LatestPublishedVersionId;
+
+        ContentVersion lease = [SELECT versionDataUrl, fileType FROM ContentVersion WHERE id=:contentVersionId AND fileType='pdf'];
+        String leaseUrl = lease.versionDataUrl;
+        return leaseUrl;
+    }
+
 }

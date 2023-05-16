@@ -1,12 +1,31 @@
 import { LightningElement, api, track, wire } from 'lwc';
 import { getObjectInfo } from 'lightning/uiObjectInfoApi';
 import  getListHouse from '@salesforce/apex/HouseMembers.getListHouse';
+import GenerateData from './Generatedata';
 import HOUSE_MEMBER from '@salesforce/schema/House_Member__c'; 
 import NAME from '@salesforce/schema/House_Member__c.Name';
 import NUMBER_OF_PETS from '@salesforce/schema/House_Member__c.Number_of_Pets__c';
 import PET_BREED from '@salesforce/schema/House_Member__c.Pet_Breeds__c';
 import SIZE from '@salesforce/schema/House_Member__c.Size__c';
 import RELATION from '@salesforce/schema/House_Member__c.Relation__c';
+
+
+const actions = [
+    { label: 'Show details', name: 'show_details' },
+    { label: 'Delete', name: 'delete' },
+];
+
+const columns = [
+    { label: 'Name', fieldName: 'Name' },
+    { label: '# of Pets', fieldName: 'Number_of_Pets__c', type: 'number'},
+    { label: 'Size', fieldName: 'Size__c', type: 'mulitipicklist' },
+    { label: 'Breed', fieldName: 'Pet_Breeds__c', type: 'currency' },
+    { label: 'Relation', fieldName: 'Relation__c', type: 'picklist' },
+    {
+        type: 'action',
+        typeAttributes: { rowActions: actions },
+    },
+];
 
 export default class PetMaintenance extends LightningElement {
 
@@ -29,16 +48,6 @@ export default class PetMaintenance extends LightningElement {
                 this.rtis = Object.keys(data.recordTypeInfos).find(rti => data.recordTypeInfos[rti].name === 'Pets');
             }
         }
-
-    //     get recordTypeId() {
-    //         if(this.objectInfo.data){
-    //         // Returns a map of record type Ids 
-    //         const rtis = this.objectInfo.data.recordTypeInfos;
-    //         return Object.keys(rtis).find(rti => rtis[rti].name === 'Pets');
-    //     } else{
-    //         return null;
-    //     }
-    // }
 
     
     onSubmitHandler(event) {
@@ -65,27 +74,86 @@ export default class PetMaintenance extends LightningElement {
         }
        
 
-
 /* information for the second table */
+
+@wire(getListHouse)
+houseMemberss;
+
+    columns = columns;
+    record = {};
+
+    connectedCallback() {
+        this.data = GenerateData({ amountOfRecords: 6 });
+    }
+
+    handleRowAction(event) {
+        const actionName = event.detail.action.name;
+        const row = event.detail.row;
+        switch (actionName) {
+            case 'delete':
+                this.deleteRow(row);
+                break;
+            case 'show_details':
+                this.showRowDetails(row);
+                break;
+            default:
+        }
+    }
+
+    deleteRow(row) {
+        const { id } = row;
+        const index = this.findRowIndexById(id);
+        if (index !== -1) {
+            this.data = this.data
+                .slice(0, index)
+                .concat(this.data.slice(index + 1));
+        }
+    }
+
+    findRowIndexById(id) {
+        let ret = -1;
+        this.data.some((row, index) => {
+            if (row.id === id) {
+                ret = index;
+                return true;
+            }
+            return false;
+        });
+        return ret;
+    }
+
+    showRowDetails(row) {
+        this.record = row;
+    }
+
+
+
+
+
+
+
+
+
+    
+/*
 @track houseMember;
 @track error;
 
-
-@wire(getListHouse)
-wiredhouseMemberList({error, data}){
-    if(data){
-        this.houseMember = data;
-        this.error = undefined;
-    } else if(error){
-        this.error = error;
-        this.houseMember = undefined;
-    }
-}
 
 showFields = true;
 toggleFields() {
     this.showFields = !this.showFields;
 }
 
-   
+   */
+
+ //     get recordTypeId() {
+    //         if(this.objectInfo.data){
+    //         // Returns a map of record type Ids 
+    //         const rtis = this.objectInfo.data.recordTypeInfos;
+    //         return Object.keys(rtis).find(rti => rtis[rti].name === 'Pets');
+    //     } else{
+    //         return null;
+    //     }
+    // }
 }

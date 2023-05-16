@@ -1,0 +1,18 @@
+.vacate{
+
+background-color: #002855;
+color: #EAAA00;
+padding: 2%;
+
+
+}
+
+.buttonn{
+
+    border-color: #EAAA00;
+    color: white;
+    background-color: #002855;
+    --slds-c-button-brand-color: white;
+    --slds-c-button-brand-color-background: #002855;
+  --slds-c-button-brand-color-border: #EAAA00;
+}
