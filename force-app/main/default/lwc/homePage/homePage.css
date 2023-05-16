@@ -2,7 +2,7 @@
 h2 {
   text-align: center;
   font-size: 2em;
-  color: var(--secondary-color)
+  color: var(--primary-color);
 }
 
 .sidebar-second{   
