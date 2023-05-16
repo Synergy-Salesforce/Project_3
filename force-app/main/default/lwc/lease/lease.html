@@ -1,10 +1,7 @@
 <template>
-    Lease 
-    <br>
-    User Id: {userId}
-    <br>
-    <template lwc:if={leaseUrl.data}>
-        Lease Url: {leaseUrl.data}
-    </template>
-    <button onclick={showLeaseUrl}>Show Lease URL</button>
+    <div class="lease">
+        <template lwc:if={leaseUrl.data}>
+            <a href= {leaseUrl.data}>Download Lease</a>
+        </template>    
+    </div>
 </template>

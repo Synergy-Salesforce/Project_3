@@ -1,21 +1,28 @@
 <!-- sldsValidatorIgnore -->
 <template>
-    <lightning-card title="Vehicle">
-        <p>version 14</p>
-        <lightning-record-edit-form class="lightform" record-id={MemberId} object-api-name="House_Member__c" record-type-id={recordTypeId}
-            onsubmit={handleSubmit}>
-            <label for={nameField}>License Plate Number</label>
-            <lightning-input-field variant="label-hidden" field-name={nameField}></lightning-input-field>
+    <lightning-card class="cardBackground" title="Vehicle">
+        <lightning-record-edit-form class="lightform" record-id={MemberId} object-api-name="House_Member__c"
+            record-type-id={recordTypeId} onsubmit={handleSubmit}>
+            <div class="slds-p-horizontal_xx-small">
+                <label for={nameField}>License Plate Number</label>
+                <lightning-input-field variant="label-hidden" field-name={nameField}></lightning-input-field>
+            </div>
             <div class="slds-grid">
                 <lightning-input-field field-name={modelField}></lightning-input-field>
                 <lightning-input-field field-name={makeField}></lightning-input-field>
             </div>
-            <!--Record type disable-->
-            <lightning-button type="submit" label="Submit" variant="brand"></lightning-button>
-            <lightning-button label="Delete" variant="brand" onclick={deleteRecord}></lightning-button>
+            <div class="slds-grid">
+                <lightning-input-field field-name={colorField}></lightning-input-field>
+                <lightning-input-field field-name={typeField}></lightning-input-field>
+            </div>
+            <lightning-input-field field-name={insuredField}></lightning-input-field>
+            <div class="slds-align_absolute-center">
+                <lightning-button class="slds-p-horizontal_medium slds-p-vertical_small buttonColor" label="Delete" variant="brand" onclick={deleteRecord}></lightning-button>
+                <lightning-button class="slds-p-horizontal_medium slds-p-vertical_small buttonColor" type="submit" label="Submit" variant="brand"></lightning-button>
+            </div>
         </lightning-record-edit-form>
         <template lwc:if={vehicleList}>
-            <lightning-datatable key-field="Id"  data={vehicleList} columns={columns} max-row-selection="1"
+            <lightning-datatable key-field="Id" data={vehicleList} columns={columns} max-row-selection="1"
                 onrowselection={handleSelection}></lightning-datatable>
         </template>
     </lightning-card>

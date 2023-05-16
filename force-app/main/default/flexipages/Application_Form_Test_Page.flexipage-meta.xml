@@ -7,8 +7,8 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>applicationForm</componentName>
-                <identifier>c_applicationForm</identifier>
+                <componentName>maintenancePage</componentName>
+                <identifier>c_maintenancePage</identifier>
             </componentInstance>
         </itemInstances>
         <name>region2</name>

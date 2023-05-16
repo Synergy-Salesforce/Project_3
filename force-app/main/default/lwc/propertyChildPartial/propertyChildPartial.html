@@ -1,13 +1,27 @@
+<!-- sldsValidatorIgnore -->
 <template>
+    <a onclick={PropClick}> 
     <div class="container">
-        <a onclick={PropClick}> 
-    <lightning-card class="card">
+       
+        
+            
     
-    <img class='img' src={newimgurl}/>
-    <span class="item propName">{prop.Name}</span>
-    <span class="item itemDetail">{prop.City__c}, {prop.State__c} </span>
-    <lightning-badge class = "itemDetail" label={prop.Number_Available_Units__c}></lightning-badge><span class="item itemDetail"> Units Available</span>
-    </lightning-card>
-    </a>
+    
+        <img class='img' src={newimgurl}><label></label></img>
+    
+            
+        <div class='flexcolumn'>
+
+            <div class="item propName">{prop.Name}</div>
+            <div class="item itemDetail">{prop.City__c}, {prop.State__c} </div>
+            <!--
+            <lightning-badge class = "itemDetail" label={prop.Number_Available_Units__c}> Units Available</lightning-badge><span class="item itemDetail"> Units Available</span>
+            -->
+            <div class='itemDetail item'>{prop.Number_Available_Units__c} Units Available</div>
+        </div>
+        
+    
+
     </div>
+</a>
 </template>

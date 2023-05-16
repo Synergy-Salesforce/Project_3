@@ -2,16 +2,13 @@
   CHRISTOPHER BOAMAH MENSAH
   REVATURE LLC
 */
-import { LightningElement, api } from 'lwc';
+import { LightningElement } from 'lwc';
 
 export default class ApplicationForm extends LightningElement {
   objectApiName = "Application__c";
 
   showMsg = false;
   autoCloseTime = 5000;
-
-  @api
-  recordId;
 
   FIRSTNAME = "First_Name__c";
   LASTNAME = "Last_Name__c";

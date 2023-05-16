@@ -3,7 +3,7 @@
     <lightning-card>
         
         <div class="title">Household Members</div>
-        <div class="txtdetail"> {household.Property__r.Name}, {household.Unit__r.Name}</div>
+        
     
         <template if:true={showForm}>
     <lightning-record-edit-form
@@ -32,7 +32,7 @@
     
         
     <lightning-datatable
-    class="slds-max-medium-table_stacked"
+    
     key-field="Id"
     data={members}
     columns={columns}

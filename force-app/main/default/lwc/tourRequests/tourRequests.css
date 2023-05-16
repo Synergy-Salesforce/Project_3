@@ -12,6 +12,8 @@ text-align: center;
     background-color:#002855 ;
     padding: 10px;
     border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.6);
 }
 
 .lightform{

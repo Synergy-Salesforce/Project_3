@@ -1,4 +1,34 @@
+<!--
+  CHRISTOPHER BOAMAH MENSAH
+  REVATURE LLC
+-->
 <template>
-    <h1>Maintenance Page</h1>
-    <h2>User Id: {userId}</h2>
+  <div class="slds-card">
+    <lightning-card>
+      <div class="card-title">
+        We are sorry to hear there is an issue!
+      </div>
+  
+      <lightning-record-edit-form
+        class="light-form"
+        object-api-name={objectApiName}
+        onsubmit={handleSubmit}>
+        <lightning-input-field field-name={NAME}></lightning-input-field>
+        <lightning-input-field field-name={PROPERTY}></lightning-input-field>
+        <lightning-input-field field-name={UNIT}></lightning-input-field> 
+        <lightning-input-field field-name={PHONE}></lightning-input-field>
+        <lightning-input-field field-name={EMAIL}></lightning-input-field>
+        <lightning-input-field field-name={SUBJECT}></lightning-input-field>
+        <lightning-input-field field-name={DESCRIPTION}></lightning-input-field>
+  
+        <div class="button-container">
+          <lightning-button variant="brand" type="submit" label="Submit" class="button-color"></lightning-button>
+        </div>
+      </lightning-record-edit-form>
+  
+      <template lwc:if={showMsg}>
+        <div class="success-msg">Your maintanence request has been submitted!</div>
+      </template>
+    </lightning-card>
+  </div>
 </template>

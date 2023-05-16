@@ -155,9 +155,10 @@
     <externalSharingModel>ReadWrite</externalSharingModel>
     <label>Vacancy Notice</label>
     <nameField>
+        <displayFormat>Vacancy-Notice-{00000}</displayFormat>
         <label>Vacancy Notice Name</label>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
+        <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Vacancy Notices</pluralLabel>
     <searchLayouts></searchLayouts>

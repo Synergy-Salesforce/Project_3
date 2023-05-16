@@ -2,11 +2,21 @@
     color:#002855;
 }
 .backgroundColor{
-    background-color: #002855;
-    border: 3px #EAAA00 solid;
-    align-items: center;
+    background-color: white;
 }
 .h1Title{
-    color: #EAAA00;
+    color: #002855;
     text-align: center;
+    font-size: 1.5em;
+}
+:host{
+    --sds-c-card-color-background: white;
+    --slds-c-card-sizing-border: 3px;
+    --slds-c-card-color-border: #EAAA00;
+    --slds-c-card-shadow: 3px 3px  black;
+    
+}
+
+.divMediaQuery{
+        flex-direction: column;
 }

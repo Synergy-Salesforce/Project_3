@@ -15,9 +15,9 @@ import { deleteRecord } from 'lightning/uiRecordApi';
 //set fields for datalist
 const columns = [
    
-    { label: 'Name', fieldName: 'Name',fixedWidth: 100 },
-    { label: 'Type', fieldName: 'Human_Type__c',fixedWidth: 90 },
-    { label: 'Relation', fieldName: 'Relation__c',fixedWidth: 90 },
+    { label: 'Name', fieldName: 'Name',fixedWidth: 90 },
+    { label: 'Type', fieldName: 'Human_Type__c',fixedWidth: 70 },
+    { label: 'Relation', fieldName: 'Relation__c',fixedWidth: 70 },
     
 ];
 

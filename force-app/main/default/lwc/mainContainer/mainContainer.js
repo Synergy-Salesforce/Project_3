@@ -88,21 +88,27 @@ export default class MainContainer extends LightningElement {
         this.updatePageMethod('applicationPage');
     }
 
+
+
+
+
     handleHamMenuClick() {
       let navMenu = this.template.querySelector(".nav-menu");
       let hamMenu = this.template.querySelector(".ham-menu");
   
-      hamMenu.addEventListener("click", () => {
-        hamMenu.classList.toggle("active");
-        navMenu.classList.toggle("active");
-      });
-  
+      navMenu.classList.toggle("active");
+
       this.template.querySelectorAll(".nav-link")
         .forEach(i => i.addEventListener("click", () => {
           hamMenu.classList.remove("active");
           navMenu.classList.remove("active");
         }));
     }
+
+
+
+
+
 
     handleHomeClick() {
       this.updatePageMethod('homePage');

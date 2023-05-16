@@ -1,8 +1,10 @@
+@import 'c/sharedCss';
 :host {
     --slds-c-badge-font-size: 1em;
 }
 h2 {
     font-size: 2em;
+    color: var(--primary-color);
 }
 .container {
     padding: 0 1em 1em 1em;

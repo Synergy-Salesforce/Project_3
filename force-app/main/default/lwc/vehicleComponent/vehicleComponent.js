@@ -24,13 +24,16 @@ export default class VehicleComponent extends LightningElement {
     @track wiredVehicleResult = [];
     @track selectedRecord;
     @api MemberId;
-
+    
 
     @track objectInfo;
 
     nameField = NAME_FIELD;
     makeField = MAKE_FIELD;
     modelField = MODEL_FIELD;
+    colorField = COLOR_FIELD;
+    typeField = TYPE_FIELD;
+    insuredField = INSURED_FIELD;
 
     columns = [
         { label: 'License Plate Number', fieldName: 'Name' },
@@ -39,8 +42,8 @@ export default class VehicleComponent extends LightningElement {
     ];
 
 
-    @wire(getVehicleInfo, { recordId: USER_ID })
-    wiredVehicleInfo( data) {
+    @wire(getVehicleInfo, { userId: USER_ID })
+    wiredVehicleInfo(data) {
         this.wiredVehicleResult = data;
         if (data) {
             this.vehicleList = data.data;
@@ -53,6 +56,7 @@ export default class VehicleComponent extends LightningElement {
         .then(res => {
             this.contactIdValue = res;
         })
+        this.refreshData();
     }
 
     

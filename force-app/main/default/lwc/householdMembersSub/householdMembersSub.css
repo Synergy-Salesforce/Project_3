@@ -1,11 +1,9 @@
 .cardstyl{
     background: #e7e9ee;
     max-width:fit-content;
-    border: 3px #EAAA00 solid;
-    padding: 3px;
-    align-items: center;
-    align-content: center;
-    align-self: center;
+    border: 3px #002855 solid;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.6);
     
 }
 .button{
@@ -19,8 +17,7 @@
     
 }
 .lightform{
-    margin-left: 5px;
-    margin-right: 5px;
+    
     margin-top: 0;
     
 }

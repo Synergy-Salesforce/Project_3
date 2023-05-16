@@ -1,0 +1,12 @@
+@import 'c/sharedCss';
+
+.lease {
+    border: 3px var(--primary-color) solid;
+    border-radius: 5px;
+    margin: 10px;
+    height: 100px;
+    align-items: center;
+    display: flex;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.6);
+}

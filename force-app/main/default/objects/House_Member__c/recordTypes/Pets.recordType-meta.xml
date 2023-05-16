@@ -134,7 +134,7 @@
     <picklistValues>
         <picklist>Relation__c</picklist>
         <values>
-            <fullName>Family%2C</fullName>
+            <fullName>Family</fullName>
             <default>false</default>
         </values>
         <values>

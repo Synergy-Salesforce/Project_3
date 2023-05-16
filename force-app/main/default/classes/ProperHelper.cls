@@ -70,6 +70,16 @@ public without sharing class ProperHelper {
       return returnid;
     }
 
+    @AuraEnabled(cacheable=true)
+    public static String getUserContact(String ui){//
+
+        String conIdFor=getConId(ui);
+        Contact userContact= [SELECT Name, Id, Property__c,Unit__c FROM Contact WHERE Id=:conIdFor LIMIT 1];//teoretically grabs the contact associated w/ user in JS
+
+        return userContact.Id;
+    }
+
+
     // @AuraEnabled(cacheable=true)
     // public static string getLeaseFromContact(String contactId){
     //     ContentDocumentLink contentVersionLatest = [SELECT Id, contentDocument.latestPublishedVersionId FROM ContentDocumentLink WHERE linkedEntityId=:contactId];

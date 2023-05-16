@@ -107,8 +107,6 @@ export default class PetMaintenance extends LightningElement {
       );
     }
     refreshData() {
-        
-        //refreshApex(this.wiredAccountsResult);
         refreshApex(this.houseMember);
      }
     

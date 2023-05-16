@@ -11,7 +11,8 @@ export default class AvailableUnitsOnDetail extends LightningElement {
     connectedCallback() {
         getUnitList({recordId : this.recordId})
         .then((res) => {
-            this.unitList = res;
+            if(res.length > 0)
+            {this.unitList = res;}
         })
     }
 

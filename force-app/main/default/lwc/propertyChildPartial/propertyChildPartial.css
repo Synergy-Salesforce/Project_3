@@ -1,15 +1,30 @@
+@import 'c/sharedCss';
+
 .container {
     
-    
-    align-items: center;
+    max-width:100%;
+    align-items: normal;
     border-radius: 5px;
-    color: #EAAA00;
-    margin:5px;
-    display: flex;
-    background-color: #002855;
+    color: #002855;
+    margin:10px;
+    padding: 3px;
+    background-color:white ;
+    display:flex;
+    align-self: normal;
+    align-items: normal;
     flex-direction: row;
-    flex-wrap: wrap;
-    
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.6);
+    border-color: #002855;
+    border-width: 3px;
+    border-style: solid;
+}
+
+
+  
+.flexcolumn{
+display:flex;
+flex-direction: column;
+
 }
 .title {
     font-size: large;
@@ -19,30 +34,34 @@
 .card{
     align-items: center;
     width: 95%;
-    color: #002855;
-    border: #002855;
+    color: white;
+    
+    background-color: #002855;
 }
 
 .propName{
     /* font-size: 5vw; */
-    font-size: 3vw;
+    font-size: 2.5vw;
 }
 
 .itemDetail{
     /* font-size: 3vw; */
-    font-size: 1vw;
+    font-size: 2vw;
 }
 
 .item{
-   align-self: auto; 
-   align-items: center;
+   /*align-self: auto; 
+   align-items: center;*/
     padding: 4px;
     color: #002855;
     font-style: bold;
 }
 
 .img{
-    width: 20%;
+    
+    max-width:25%;
+    object-fit: scale-down;
     padding: 0px 0px 0px 0px;
     margin: 0px 5px 0px 10px;
+    
 }

@@ -12,9 +12,9 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Family,</fullName>
+                <fullName>Family</fullName>
                 <default>false</default>
-                <label>Family,</label>
+                <label>Family</label>
             </value>
             <value>
                 <fullName>Friend</fullName>
