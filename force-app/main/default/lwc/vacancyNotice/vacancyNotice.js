@@ -27,12 +27,9 @@ contactId;
         })
     }
 
-
-
 @api recordId;
 @api objectApiName;
 //need to grab user/unit info then set as default in outout fields
-
 
 handleSubmit(event) {
 
@@ -58,8 +55,5 @@ handleSubmit(event) {
 
 
 } 
-
-
-
 
 }

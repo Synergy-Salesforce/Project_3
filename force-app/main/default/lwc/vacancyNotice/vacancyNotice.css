@@ -10,9 +10,6 @@ border-color: #EAAA00;
 border-width: 2px;
 }
 
-
-
-
 .buttonn{
 
     border-color: #EAAA00;
@@ -20,5 +17,4 @@ border-width: 2px;
     background-color: #002855;
     --sds-c-button-color-: white;
     --slds-c-button-brand-color-background: #002855;
-   
 }
