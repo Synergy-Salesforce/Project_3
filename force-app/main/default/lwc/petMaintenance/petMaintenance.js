@@ -1,7 +1,8 @@
 import { LightningElement, api, track, wire } from 'lwc';
 import { getObjectInfo } from 'lightning/uiObjectInfoApi';
-import  getListHouse from '@salesforce/apex/HouseMembers.getListHouse';
-import GenerateData from './Generatedata';
+import { deleteRecord } from 'lightning/uiRecordApi';
+import { refreshApex } from '@salesforce/apex';
+import getListHouse from '@salesforce/apex/HouseMembers.getListHouse';
 import HOUSE_MEMBER from '@salesforce/schema/House_Member__c'; 
 import NAME from '@salesforce/schema/House_Member__c.Name';
 import NUMBER_OF_PETS from '@salesforce/schema/House_Member__c.Number_of_Pets__c';
@@ -11,7 +12,6 @@ import RELATION from '@salesforce/schema/House_Member__c.Relation__c';
 
 
 const actions = [
-    { label: 'Show details', name: 'show_details' },
     { label: 'Delete', name: 'delete' },
 ];
 
@@ -34,7 +34,7 @@ export default class PetMaintenance extends LightningElement {
     autoCloseTime = 5000; 
     @api objectApiName;
     @track rtis;  
-    
+    columns = columns;
     NAME = "Name";
     NUMBER_OF_PETS = "Number_of_Pets__c";
     PET_BREED = "Pet_Breeds__c";
@@ -75,85 +75,28 @@ export default class PetMaintenance extends LightningElement {
        
 
 /* information for the second table */
+   
 
-@wire(getListHouse)
-data;
+    @wire(getListHouse)
+    houseMember;
 
-    columns = columns;
-    record = {};
-
-    connectedCallback() {
-        this.data = GenerateData({ amountOfRecords: 6 });
-    }
-
-    handleRowAction(event) {
-        const actionName = event.detail.action.name;
-        const row = event.detail.row;
-        switch (actionName) {
-            case 'delete':
-                this.deleteRow(row);
-                break;
-            case 'show_details':
-                this.showRowDetails(row);
-                break;
-            default:
+    handleRowAction(event) {  
+        console.log(event);
+        console.log(event.detail.row);
+     
+        deleteRecord(event.detail.row.Id)
+        .then(() => {
+            refreshApex(this.houseMember);
         }
+      );
     }
-
-    deleteRow(row) {
-        const { id } = row;
-        const index = this.findRowIndexById(id);
-        if (index !== -1) {
-            this.data = this.data
-                .slice(0, index)
-                .concat(this.data.slice(index + 1));
-        }
-    }
-
-    findRowIndexById(id) {
-        let ret = -1;
-        this.data.some((row, index) => {
-            if (row.id === id) {
-                ret = index;
-                return true;
-            }
-            return false;
-        });
-        return ret;
-    }
-
-    showRowDetails(row) {
-        this.record = row;
-    }
-
-
-
-
-
-
-
-
 
     
-/*
-@track houseMember;
-@track error;
-
-
-showFields = true;
-toggleFields() {
-    this.showFields = !this.showFields;
 }
 
-   */
 
- //     get recordTypeId() {
-    //         if(this.objectInfo.data){
-    //         // Returns a map of record type Ids 
-    //         const rtis = this.objectInfo.data.recordTypeInfos;
-    //         return Object.keys(rtis).find(rti => rtis[rti].name === 'Pets');
-    //     } else{
-    //         return null;
-    //     }
-    // }
-}
+
+
+
+
+
