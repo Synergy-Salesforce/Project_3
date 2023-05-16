@@ -5,23 +5,34 @@
         object-api-name={objectApiName}
         record-id={recordId}
         >
-            <lightning-badge label="Property Name" icon-name="utility:home" class="slds-text-heading_small"></lightning-badge>
-            <lightning-output-field field-name={fields.nameField} variant="label-hidden"></lightning-output-field>
-            <lightning-badge label="Street Address" icon-name="standard:address" class="slds-text-heading_small"></lightning-badge>
-            <lightning-output-field field-name={fields.streetAddressField} variant="label-hidden"></lightning-output-field>
-            <lightning-badge label="State" icon-name="utility:location" class="slds-text-heading_small"></lightning-badge>
-            <lightning-output-field field-name={fields.stateField} variant="label-hidden"></lightning-output-field>
-            <lightning-badge label="ZIP Code" icon-name="utility:location" class="slds-text-heading_small"></lightning-badge>
-            <lightning-output-field field-name={fields.zipCodeField} variant="label-hidden"></lightning-output-field>
-            <lightning-badge label="Has Available Units?" class="slds-text-heading_small"></lightning-badge>
-            <lightning-output-field field-name={fields.hasAvailableUnitsField} variant="label-hidden"></lightning-output-field>
-            <lightning-badge label="Maintenance Fees" icon-name="utility:money" class="slds-text-heading_small"></lightning-badge>
-            <lightning-output-field field-name={fields.maintenanceFeesField} variant="label-hidden"></lightning-output-field>
+            <lightning-badge label="Property Name" icon-name="utility:home"
+                class="slds-text-heading_small slds-m-left_small"></lightning-badge>
+            <lightning-output-field field-name={fields.nameField} variant="label-hidden"
+                field-class="slds-m-left_x-large"></lightning-output-field>
+            <lightning-badge label="Street Address" icon-name="standard:address"
+                class="slds-text-heading_small slds-m-left_small"></lightning-badge>
+            <lightning-output-field field-name={fields.streetAddressField} variant="label-hidden"
+                field-class="slds-m-left_x-large"></lightning-output-field>
+            <lightning-badge label="State" icon-name="utility:location"
+                class="slds-text-heading_small slds-m-left_small"></lightning-badge>
+            <lightning-output-field field-name={fields.stateField} variant="label-hidden"
+                field-class="slds-m-left_x-large"></lightning-output-field>
+            <lightning-badge label="ZIP Code" icon-name="utility:location"
+                class="slds-text-heading_small slds-m-left_small"></lightning-badge>
+            <lightning-output-field field-name={fields.zipCodeField} variant="label-hidden"
+                field-class="slds-m-left_x-large"></lightning-output-field>
+            <lightning-badge label="Has Available Units?" class="slds-text-heading_small slds-m-left_small"></lightning-badge>
+            <lightning-output-field field-name={fields.hasAvailableUnitsField} variant="label-hidden"
+                field-class="slds-m-left_x-large"></lightning-output-field>
+            <lightning-badge label="Maintenance Fees" icon-name="utility:money"
+                class="slds-text-heading_small slds-m-left_small"></lightning-badge>
+            <lightning-output-field field-name={fields.maintenanceFeesField} variant="label-hidden"
+                field-class="slds-m-left_x-large"></lightning-output-field>
             <lightning-badge label="Pets Allowed?" icon-name="utility:animal_and_nature"
-                class="slds-text-heading_small"></lightning-badge>
-            <lightning-output-field field-name={fields.petsAllowedField} variant="label-hidden"></lightning-output-field>
-            <lightning-badge label="Total Units" icon-name="utility:number_input" class="slds-text-heading_small"></lightning-badge>
-            <lightning-output-field field-name={fields.totalUnitsField} variant="label-hidden"></lightning-output-field>
+                class="slds-text-heading_small slds-m-left_small"></lightning-badge>
+            <lightning-output-field field-name={fields.petsAllowedField} variant="label-hidden" field-class="slds-m-left_x-large"></lightning-output-field>
+            <lightning-badge label="Total Units" icon-name="utility:number_input" class="slds-text-heading_small slds-m-left_small"></lightning-badge>
+            <lightning-output-field field-name={fields.totalUnitsField} variant="label-hidden" field-class="slds-m-left_x-large"></lightning-output-field>
         </lightning-record-view-form>
         <c-available-units-on-detail record-id={recordId}></c-available-units-on-detail>
     </div>
