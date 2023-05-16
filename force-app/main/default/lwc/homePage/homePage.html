@@ -1,6 +1,12 @@
 <template>
     <c-hero></c-hero>
     <div>
+        <template lwc:if={showAllLocations}>
+            <h2>All Properties</h2>
+        </template>
+        <template lwc:else>
+            <h2>Properties with Availability</h2>
+        </template>
         <section class="flex-content3">
             <main class="main">
                 <div class="home-page-main-content">

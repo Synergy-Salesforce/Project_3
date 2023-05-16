@@ -1,0 +1,50 @@
+.container {
+    
+    
+    align-items: center;
+    border-radius: 5px;
+    color: #002855;
+    margin:5px;
+    padding: 3px;
+    background-color:#002855 ;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.6);
+    
+}
+.title {
+    font-size: large;
+    font-style: Bold;
+    color: #EAAA00;
+}
+.card{
+    align-items: center;
+    width: 95%;
+    color: white;
+    border: #002855;
+    background-color: #002855;
+}
+
+.propName{
+    /* font-size: 5vw; */
+    font-size: 3vw;
+}
+
+.itemDetail{
+    /* font-size: 3vw; */
+    font-size: 2vw;
+}
+
+.item{
+   align-self: auto; 
+   align-items: center;
+    padding: 4px;
+    color: #002855;
+    font-style: bold;
+}
+
+.img{
+    width: 20%;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 5px 0px 10px;
+}

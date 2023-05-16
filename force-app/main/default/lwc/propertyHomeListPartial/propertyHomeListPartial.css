@@ -3,3 +3,14 @@
     font-style: Bold;
     color: #EAAA00;
 }
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    flex-shrink: initial;
+    border-radius: 5px;
+    color: #002855;
+    margin:5px;
+    padding: 3px;
+    
+}

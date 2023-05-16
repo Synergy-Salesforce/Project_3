@@ -4,16 +4,17 @@
     background-color: var(--primary-color);
     color: white;
     padding: 20px;
-    margin: 0;
-    min-height: 200px;
+    margin: 0px 0px 5px 0px;
 }
 
 .logo {
     border: 3px solid black;
+    height: 82px;
 }
 
 .main-content{
-    border: 3px var(--secondary-color) solid;
+    width: 80%;
+    margin: auto;
 }
 
 .nav-link {

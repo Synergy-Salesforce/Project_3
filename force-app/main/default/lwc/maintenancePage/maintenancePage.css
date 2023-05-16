@@ -1,0 +1,24 @@
+@import 'c/sharedCss';
+
+.success-msg {
+  font-size: large;
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.card-title {
+  font-size: larger;
+  text-align: center;
+}
+
+.button-color {
+  --sds-c-button-brand-color-background: var(--primary-color);
+}
+
+.slds-card {
+  padding: 10px; 
+}

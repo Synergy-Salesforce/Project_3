@@ -1,13 +1,14 @@
 <!-- sldsValidatorIgnore -->
 <template>
     <div class="container">
-    <lightning-card class="card">
+    
         <a onclick={PropClick}>
         <img class="product-img" src={propertyImgUrl}/> </a>
+        <div class="card">
         <div class="title">{property.Name}</div>
-        <div> {property.Street_Address__c}, {property.City__c},{property.State__c} {property.ZipCode__c}</div>
-        <div> {property.Number_Available_Units__c} Units Available </div>
+        <div class="des"> {property.Street_Address__c}, {property.City__c},{property.State__c} {property.ZipCode__c}</div>
+        <div class="des"> {property.Number_Available_Units__c} Units Available </div>
         <div class="des">{property.Description__c}</div>
-    </lightning-card>
+        </div>
     </div>
 </template>

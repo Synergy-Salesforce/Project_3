@@ -1,4 +1,21 @@
-.tour-title {
-    font-size: 25px;
+.title{
+    font-size: larger;
     text-align: center;
+}
+.showMsg{
+font-size: larger;
+text-align: center;
+
+}
+.card{
+    min-width: 200px;
+    background-color:#002855 ;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.lightform{
+    margin: 1px 10px 3px 10px;
+
 }
