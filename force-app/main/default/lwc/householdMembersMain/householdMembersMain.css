@@ -1,6 +1,6 @@
 .card{
 text-size-adjust: 1vw;
-width: 300px;
+width: fit-content;
 
     margin: 2px;
     padding: 10px;
