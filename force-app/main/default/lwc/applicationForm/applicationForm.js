@@ -25,7 +25,7 @@ export default class ApplicationForm extends LightningElement {
     this.handleReset()
     this.showMsg = true
     setTimeout(() => {
-      this.showsuccess();
+      this.showSuccess();
     }, this.autoCloseTime);
   }
 
@@ -38,7 +38,7 @@ export default class ApplicationForm extends LightningElement {
     }
   }
 
-  showsuccess() {
+  showSuccess() {
     this.showMsg = false;
   }
 }

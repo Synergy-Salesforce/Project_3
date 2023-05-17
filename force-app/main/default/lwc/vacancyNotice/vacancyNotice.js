@@ -47,10 +47,6 @@ handleSubmit(event) {
 
     fields.Contact__c = this.contactId;
     fields.name=
-    
-    console.log(this.contactId+'helper locATION');
-
-
     //fields.	RecordTypeId ='0128b000000dNzpAAE'; //???
     this.template.querySelector('.lightform').submit(fields);
     this.handleReset();

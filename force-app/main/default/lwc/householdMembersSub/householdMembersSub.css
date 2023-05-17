@@ -1,3 +1,13 @@
+@import 'c/sharedCss';
+
+.button-color {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: auto;
+    --sds-c-button-brand-color-background: var(--primary-color);
+  }
+  
+
 .cardstyl{
     background: #e7e9ee;
     max-width:fit-content;
@@ -5,11 +15,6 @@
     border-radius: 5px;
     box-shadow: 0 4px 10px rgb(0 0 0 / 0.6);
     
-}
-.button{
-    margin-left: 10px;
-    margin-right: 10px;
-    padding: auto;
 }
 
 .dtable{

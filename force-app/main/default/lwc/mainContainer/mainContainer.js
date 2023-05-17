@@ -66,7 +66,6 @@ export default class MainContainer extends LightningElement {
                 this.mContext,
                 MainChannel,
                 (payload) => {
-                    console.log(payload.recordId);
                     this.recordId = payload.recordId;
                     this.updatePageMethod(payload.updatePage);
                     },

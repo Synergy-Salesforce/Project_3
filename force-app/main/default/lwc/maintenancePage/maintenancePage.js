@@ -5,13 +5,11 @@
 import { LightningElement } from 'lwc';
 
 export default class MaintenancePage extends LightningElement {
-
   objectApiName = "Maintenance__c";
 
   showMsg = false;
   autoCloseTime = 5000;
 
-  NAME = "Name"
   PROPERTY = "Property__c"
   UNIT = "Unit__c";
   PHONE = "Phone__c";
@@ -26,7 +24,7 @@ export default class MaintenancePage extends LightningElement {
     this.handleReset()
     this.showMsg = true
     setTimeout(() => {
-      this.showsuccess();
+      this.showSuccess();
     }, this.autoCloseTime);
   }
 
@@ -39,7 +37,7 @@ export default class MaintenancePage extends LightningElement {
     }
   }
 
-  showsuccess() {
+  showSuccess() {
     this.showMsg = false;
   }
 }

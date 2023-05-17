@@ -8,7 +8,6 @@ export default class TourRequestForm extends LightningElement {
 
 
     handleFlowEventsStatus(e){
-        console.log("flow status", e.detail.status);
         if (e.detail.status == "FINISHED") {
             this.dispatchEvent(
                 new ShowToastEvent({
