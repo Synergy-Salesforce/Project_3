@@ -6,11 +6,12 @@ import USER_ID from '@salesforce/user/Id';
 import NAME_FIELD from '@salesforce/schema/House_Member__c.Name';
 import MAKE_FIELD from '@salesforce/schema/House_Member__c.Make__c';
 import TYPE_FIELD from '@salesforce/schema/House_Member__c.Car_Type__c';
+import CONTACT from '@salesforce/schema/House_Member__c.Contact__c';
 import MODEL_FIELD from '@salesforce/schema/House_Member__c.Model__c';
 import PLATE_FIELD from '@salesforce/schema/House_Member__c.License_Plate__c';
 import COLOR_FIELD from '@salesforce/schema/House_Member__c.Color__c';
 import INSURED_FIELD from '@salesforce/schema/House_Member__c.Insured__c';
-
+import getCONID from '@salesforce/apex/ProperHelper.getConId';
 import { refreshApex } from '@salesforce/apex';
 import { deleteRecord } from 'lightning/uiRecordApi';
 
@@ -24,6 +25,7 @@ export default class VehicleComponent extends LightningElement {
     @track wiredVehicleResult = [];
     @track selectedRecord;
     @api MemberId;
+    @api conId;
     
 
     @track objectInfo;
@@ -42,7 +44,7 @@ export default class VehicleComponent extends LightningElement {
     ];
 
 
-    @wire(getVehicleInfo, { userId: USER_ID })
+    @wire(getVehicleInfo, { conId: '$conId' })
     wiredVehicleInfo(data) {
         this.wiredVehicleResult = data;
         if (data) {
@@ -52,9 +54,9 @@ export default class VehicleComponent extends LightningElement {
     //0128b000000dO04AAE - record type id
 
     connectedCallback(){
-        getcontact({ userId: USER_ID})
+        getCONID({ userId: USER_ID })
         .then(res => {
-            this.contactIdValue = res;
+            this.conId = res;
         })
         this.refreshData();
     }
@@ -63,7 +65,7 @@ export default class VehicleComponent extends LightningElement {
     handleSubmit(event){
         event.preventDefault();
         const fields = event.detail.fields;
-        fields.Contact__c = this.contactIdValue;
+        fields.Contact__c = this.conId;
         fields.RecordTypeId = '0128b000000dO04AAE';
         this.template.querySelector('.lightform').submit(fields);
         this.handleReset();

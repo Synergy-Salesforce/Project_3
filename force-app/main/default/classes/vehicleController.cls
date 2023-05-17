@@ -1,13 +1,8 @@
 public without sharing class vehicleController {
     
     @AuraEnabled(Cacheable=true)
-    public static List<House_Member__c> getVehicle(String userId){
-        List<User> userRecord = [SELECT Contact.Id FROM User WHERE Id=: userId LIMIT 1];
-        String contactId;
-        
-        for (User us : userRecord) {
-            contactId = us.Contact.Id;
-        }
+    public static List<House_Member__c> getVehicle(String conId){
+     
 
         return [
             SELECT
@@ -20,7 +15,7 @@ public without sharing class vehicleController {
               Insured__c,
               Added_Description_Additional_Details__c
             FROM House_Member__c
-            WHERE Contact__c =:contactId AND RecordType.Name IN ('Cars')
+            WHERE Contact__c =:conId AND RecordType.Name IN ('Cars')
           ];
     }
 
