@@ -6,18 +6,18 @@ import { LightningElement } from 'lwc';
 
 export default class MaintenancePage extends LightningElement {
 
-  objectApiName = "Case";
+  objectApiName = "Maintenance__c";
 
   showMsg = false;
   autoCloseTime = 5000;
 
-  NAME = "SuppliedName"
+  NAME = "Name"
   PROPERTY = "Property__c"
   UNIT = "Unit__c";
-  PHONE = "SuppliedPhone";
-  EMAIL = "SuppliedEmail";
-  SUBJECT = "Subject";
-  DESCRIPTION = "Description";
+  PHONE = "Phone__c";
+  EMAIL = "Email__c";
+  SUBJECT = "Subject__c";
+  DESCRIPTION = "Description__c";
 
   handleSubmit(event) {
     event.preventDefault();
