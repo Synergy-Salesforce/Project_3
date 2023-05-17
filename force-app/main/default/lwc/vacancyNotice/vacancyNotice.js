@@ -1,4 +1,4 @@
-import { LightningElement, api, wire } from 'lwc';
+import { LightningElement, api,track} from 'lwc';
 //import VACANCY_NOTICE from '@salesforce/schema/Vacancy_Notice__c';
 import NAME_FIELD from '@salesforce/schema/Vacancy_Notice__c.Name';
 import DATE_FIELD from '@salesforce/schema/Vacancy_Notice__c.Date_of_Vacancy__c';
@@ -17,6 +17,9 @@ export default class VacancyNotice extends LightningElement {
 //@wire(contGet, {userId:'$userId'})
 //contactId;
 contactId;
+autoCloseTime = 1000;
+@track showForm = true;
+showMsg = false;
 
     connectedCallback() {
         contGet({ userId: CURRENT_USER })
@@ -50,15 +53,38 @@ handleSubmit(event) {
 
     //fields.	RecordTypeId ='0128b000000dNzpAAE'; //???
     this.template.querySelector('.lightform').submit(fields);
-    //this.handleReset();
-    //this.showMsg = true
-    //setTimeout(() => {
-    //this.showsuccess();
-//}, this.autoCloseTime);
+    this.handleReset();
+    this.showMsg = true;
+    setTimeout(() => {
+    this.showsuccess();
+}, this.autoCloseTime);
 
 
 } 
 
+
+//reset record form data   
+handleReset(event) {
+    const inputFields = this.template.querySelectorAll(
+        'lightning-input-field'
+    );
+    
+    if (inputFields) {
+        inputFields.forEach(field => {
+            field.reset();  
+        });
+    
+    }
+    const editForm = this.template.querySelector('lightning-record-edit-form');
+        editForm.recordId = null;
+ }
+
+// show success msg
+ showsuccess(e){
+    this.showMsg = false
+    
+    
+ }
 
 
 
