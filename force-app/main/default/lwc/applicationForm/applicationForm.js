@@ -36,6 +36,8 @@ export default class ApplicationForm extends LightningElement {
         field.reset();  
       });
     }
+    const editForm = this.template.querySelector('lightning-record-edit-form');
+    editForm.recordId = null;
   }
 
   showSuccess() {

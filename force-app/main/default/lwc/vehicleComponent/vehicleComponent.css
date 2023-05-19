@@ -1,3 +1,24 @@
+@import 'c/sharedCss';
 :host{
-    max-width: 400px;
+    margin: 10px;
+    background: #e7e9ee;
+    max-width:fit-content;
+    border: 3px #002855 solid;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.6);
+
+}
+.fields{
+    margin: 5px;
+}
+.button-color {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: auto;
+    --sds-c-button-brand-color-background: var(--primary-color);
+  }
+  
+  .dtable{
+    max-width:fit-content;
+    
 }

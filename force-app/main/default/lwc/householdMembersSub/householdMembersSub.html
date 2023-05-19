@@ -19,11 +19,11 @@
     <lightning-input-field field-name={relationField}> </lightning-input-field>
     </div>
     
-    
+    <div class="slds-align_absolute-center">
         <lightning-button class="button-color" variant="brand" type="submit" label="Save"> 
         </lightning-button>
         <lightning-button class="button-color" variant="brand" label="Delete" onclick={deleteRecord}></lightning-button>
-        
+        </div>
     <template if:true={showMsg}>
         <div class="showMsg">The Member has been updated.</div>
     </template>

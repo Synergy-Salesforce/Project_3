@@ -1,43 +1,48 @@
 <template>
-   
+   <div class="petcard">
     <lightning-card>
         <div class="title" >Add A New Pet Below!</div>
         <lightning-record-edit-form class = "petlightform"
         object-api-name='House_Member__c'
         onsubmit={onSubmitHandler} 
+        record-id={MemberId}
         record-type-id={rtis}
     >
+    
+    
     <lightning-input-field field-name={NAME}></lightning-input-field>
+    
+    
     <div class="slds-grid">
     
-    <lightning-input-field field-name={RELATION}></lightning-input-field>
-    <lightning-input-field field-name={NUMBER_OF_PETS}></lightning-input-field>
     <lightning-input-field field-name={SIZE}></lightning-input-field>
-    </div>
-    <lightning-input-field field-name={PET_BREED}></lightning-input-field>
     
-    <lightning-button variant="brand" type="submit" label="Submit">
-    </lightning-button>
+    <lightning-input-field field-name={PET_BREED}></lightning-input-field>
+</div>
+    <div class="slds-align_absolute-center">
+    <lightning-button class="button-color" variant="brand" type="submit" label="Save"> </lightning-button>
+      <lightning-button class="button-color" variant="brand" label="Delete" onclick={deleteRecord}></lightning-button>
+    </div>
 </lightning-record-edit-form>
 
         <template if:true={showMsg}>
         <div class = "ShowMsg">Thanks for adding a pet! You can see your new member {recordId} listed below!</div>
       </template>
-</lightning-card>
+
 
 <!-- place if:true directive on the form to see if user id is null for the form to conditionally render - likewise use the null navigation safe operator to avoid null pointer exception -->
 
 
-  <lightning-card>
+  
   <div class = "myDatatable">
       <lightning-datatable
               key-field="id"
-              data={houseMember.data}
+              data={houseMember}
               columns={columns}
-              onrowaction={handleRowAction}
+              onrowselection={handelSelection}
               max-row-selection="1">
       </lightning-datatable>
   </div>
 </lightning-card>
-
+</div>
 </template>

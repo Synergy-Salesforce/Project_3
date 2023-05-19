@@ -4,6 +4,7 @@
     display: flex;
     align-items: normal;
     justify-items: auto;
+    flex-wrap: wrap;
     
 }
 

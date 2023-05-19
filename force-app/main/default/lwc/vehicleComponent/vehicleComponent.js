@@ -1,5 +1,5 @@
 import { LightningElement, api, wire, track } from 'lwc';
-import getVehicleInfo from '@salesforce/apex/vehicleController.getVehicle';
+import getVehicleInfo2 from '@salesforce/apex/vehicleController.getVehicle';
 import getcontact from '@salesforce/apex/vehicleController.getContactId';
 
 import USER_ID from '@salesforce/user/Id';
@@ -15,21 +15,31 @@ import getCONID from '@salesforce/apex/ProperHelper.getConId';
 import { refreshApex } from '@salesforce/apex';
 import { deleteRecord } from 'lightning/uiRecordApi';
 
-
+const columns = [
+    { label: 'License', fieldName: 'Name',fixedWidth: 110 },
+    { label: 'Make', fieldName: 'Make__c',fixedWidth: 110 },
+    { label: 'Model', fieldName: 'Model__c',fixedWidth: 110 }
+];
+const data = [
+    {
+    Name: '2352235235',
+    Make__c: 'utility:down',
+}];
 
 export default class VehicleComponent extends LightningElement {
 
     @api recordId;
-    @track vehicleList = [];
+    
     contactIdValue;
-    @track wiredVehicleResult = [];
+    @track wiredAccountsResult = [];
+    @track vehicleList = [];
     @track selectedRecord;
     @api MemberId;
     @api conId;
+    userId = USER_ID;
+    columns = columns;
+    data=data;
     
-
-    @track objectInfo;
-
     nameField = NAME_FIELD;
     makeField = MAKE_FIELD;
     modelField = MODEL_FIELD;
@@ -37,31 +47,24 @@ export default class VehicleComponent extends LightningElement {
     typeField = TYPE_FIELD;
     insuredField = INSURED_FIELD;
 
-    columns = [
-        { label: 'License Plate Number', fieldName: 'Name' },
-        { label: 'Make', fieldName: 'Make__c' },
-        { label: 'Model', fieldName: 'Model__c' }
-    ];
 
-
-    @wire(getVehicleInfo, { conId: '$conId' })
-    wiredVehicleInfo(data) {
-        this.wiredVehicleResult = data;
-        if (data) {
-            this.vehicleList = data.data;
+    @wire(getVehicleInfo2,{recordId: '$conId'})
+    wiredAccounts(result) {
+  
+        this.wiredAccountsResult = result;
+        
+        if (result.data) {
+            this.vehicleList = result.data;
+            this.error = undefined;
+        } else if (result.error) {
+            this.error = result.error;
+            this.vehicleList = undefined;
+            
         }
     }
-    //0128b000000dO04AAE - record type id
 
-    connectedCallback(){
-        getCONID({ userId: USER_ID })
-        .then(res => {
-            this.conId = res;
-        })
-        this.refreshData();
-    }
 
-    
+
     handleSubmit(event){
         event.preventDefault();
         const fields = event.detail.fields;
@@ -73,7 +76,7 @@ export default class VehicleComponent extends LightningElement {
         }, (1000));
     }
 
-    handleReset(event) {
+    handleReset() {
         const inputFields = this.template.querySelectorAll(
             'lightning-input-field'
         );
@@ -87,18 +90,17 @@ export default class VehicleComponent extends LightningElement {
         const editForm = this.template.querySelector('lightning-record-edit-form');
             editForm.recordId = null;
      }
-
      refreshData(){
-        refreshApex(this.wiredVehicleResult);
+        refreshApex(this.wiredAccountsResult);
         refreshApex(this.vehicleList);
      }
 
-     handleSelection(event){
-        if(event.detail.selectedRows.length > 0){
-            this.selectedRecord = event.detail.selectedRows[0].Id;
+     handelSelection(event) {
+        if (event.detail.selectedRows.length > 0) {
+          this.selectedRecord = event.detail.selectedRows[0].Id;
         }
         this.MemberId = this.selectedRecord;
-     }
+      }
      deleteRecord(){
         deleteRecord(this.selectedRecord)
         .then(() => {

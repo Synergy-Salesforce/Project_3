@@ -9,7 +9,8 @@ export default class HouseholdMembersMain extends LightningElement {
     @api recordId;
     household;
     conId;
-    connectedCallback() {
+    constructor() {
+        super();
         getCONID({ userId: USER_ID })
         .then(res => {
             this.conId = res;

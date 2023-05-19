@@ -1,9 +1,12 @@
 <!-- sldsValidatorIgnore -->
 <template>
-    <lightning-card class="cardBackground" title="Vehicle">
+    <div class="cardBackground">
+        <lightning-card>
+    
         <lightning-record-edit-form class="lightform" record-id={MemberId} object-api-name="House_Member__c"
             record-type-id={recordTypeId} onsubmit={handleSubmit}>
-            <div class="slds-p-horizontal_xx-small">
+           <div class="fields">
+            <div>
                 <label for={nameField}>License Plate Number</label>
                 <lightning-input-field variant="label-hidden" field-name={nameField}></lightning-input-field>
             </div>
@@ -14,16 +17,17 @@
             <div class="slds-grid">
                 <lightning-input-field field-name={colorField}></lightning-input-field>
                 <lightning-input-field field-name={typeField}></lightning-input-field>
-            </div>
+            </div></div>
             <lightning-input-field field-name={insuredField}></lightning-input-field>
             <div class="slds-align_absolute-center">
-                <lightning-button class="slds-p-horizontal_medium slds-p-vertical_small buttonColor" label="Delete" variant="brand" onclick={deleteRecord}></lightning-button>
-                <lightning-button class="slds-p-horizontal_medium slds-p-vertical_small buttonColor" type="submit" label="Submit" variant="brand"></lightning-button>
+                <lightning-button class="button-color" label="Delete" variant="brand" onclick={deleteRecord}></lightning-button>
+                <lightning-button class="button-color" type="submit" label="Submit" variant="brand"></lightning-button>
             </div>
         </lightning-record-edit-form>
-        <template lwc:if={vehicleList}>
-            <lightning-datatable key-field="Id" data={vehicleList} columns={columns} max-row-selection="1"
-                onrowselection={handleSelection}></lightning-datatable>
-        </template>
-    </lightning-card>
+        <div class="dtable">
+            <lightning-datatable key-field="Id" data={vehicleList} columns={columns} max-row-selection="1" onrowselection={handelSelection}
+                ></lightning-datatable>
+        </div>
+   </lightning-card>
+</div>
 </template>

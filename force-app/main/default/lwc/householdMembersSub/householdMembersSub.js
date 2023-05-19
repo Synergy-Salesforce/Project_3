@@ -43,7 +43,9 @@ export default class HouseholdMembersSub extends LightningElement {
 // datalist set to resfreshable     
     @wire(getHouseMembersList,{recordId: '$conId'})
     wiredAccounts(result) {
+       
         this.wiredAccountsResult = result;
+        
         if (result.data) {
             this.members = result.data;
             this.error = undefined;

@@ -1,7 +1,7 @@
 public without sharing class vehicleController {
     
     @AuraEnabled(Cacheable=true)
-    public static List<House_Member__c> getVehicle(String conId){
+    public static List<House_Member__c> getVehicle(String recordId){
      
 
         return [
@@ -12,10 +12,9 @@ public without sharing class vehicleController {
               Car_Type__c,
               Model__c,
               Color__c,
-              Insured__c,
-              Added_Description_Additional_Details__c
+              Insured__c
             FROM House_Member__c
-            WHERE Contact__c =:conId AND RecordType.Name IN ('Cars')
+            WHERE Contact__c = :recordId AND RecordTypeId = '0128b000000dO04AAE'
           ];
     }
 
